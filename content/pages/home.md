@@ -48,5 +48,7 @@ blocks:
           color, font, or icon set.
     color: tint
     _template: features
+  - body: And now I have added a section.
+    _template: content
 ---
 
