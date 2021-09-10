@@ -32,6 +32,8 @@ const GoToEditPage: React.FC = () => {
               TinaCMS!
             </a>{" "}
             Please login with Tina Cloud to be able to edit your site.
+
+            TEST1
           </p>
         )}
         {edit && (
