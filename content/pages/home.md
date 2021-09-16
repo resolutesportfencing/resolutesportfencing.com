@@ -10,7 +10,7 @@ blocks:
       in `.tina/schema.ts`.
 
 
-      test17
+      test18
     actions:
       - label: Get Started
         type: button
