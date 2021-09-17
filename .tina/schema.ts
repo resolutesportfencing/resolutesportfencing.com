@@ -3,7 +3,7 @@ import type { TinaCollection, TinaTemplate, TinaField } from "@tinacms/cli";
 
 const iconSchema: TinaField = {
   type: "object",
-  label: "Icon",
+  label: "Icon1",
   name: "icon",
   fields: [
     {
