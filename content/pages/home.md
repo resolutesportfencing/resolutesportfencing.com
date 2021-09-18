@@ -22,8 +22,8 @@ blocks:
         link: /posts
     image:
       src: >-
-        https://res.cloudinary.com/forestry-demo/image/upload/v1628102029/tina-cloud-starter/tina-illustration.WebP
-      alt: Tina
+        http://res.cloudinary.com/dd8lpdgt2/image/upload/v1632002014/resolute_portrait_fovzct.png
+      alt: Resolute Sport Fencing
     color: default
     _template: hero
   - items:
