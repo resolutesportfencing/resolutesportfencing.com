@@ -8,8 +8,6 @@ blocks:
       and beginner fencers. Additionally, our students have been
       awarded numerous medals at local, regional and national
       championships.
-
-
     actions:
       - label: Get Started
         type: button
