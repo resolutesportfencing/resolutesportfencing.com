@@ -1,16 +1,15 @@
 ---
 blocks:
   - tagline: ''
-    headline: Welcome to the Tina Starter.
+    headline: Creating Champions
     text: >-
-      This project is set up to show you the basics of working with Tina. You're
-      looking at the landing page, which pulls content from
-      `content/pages/home.md`, components from `components/blocks`, and puts
-      them all together in `pages/[filename].tsx`, all based on a schema defined
-      in `.tina/schema.ts`.
+      Resolute Sport Fencing trains ages 6 to adult in the epee
+      fencing weapon with successful programs for both experienced
+      and beginner fencers. Additionally, our students have been
+      awarded numerous medals at local, regional and national
+      championships.
 
 
-      test69
     actions:
       - label: Get Started
         type: button
@@ -31,16 +30,24 @@ blocks:
           color: red
           style: float
           name: code
-        title: Amazing Feature
+        title: Dedicated Educators
         text: >-
-          Aliquam blandit felis rhoncus, eleifend ipsum in, condimentum nibh.
-          Praesent ac faucibus risus, eu lacinia enim.
+          We have an incredibly passionate team here at Pro Fencing Academy.
+          Above all, all of our instructors have dedicated decades to the sport
+          in order to compete not just locally but on the national & global stage.
+          Our club has bred many national champions and world cup competitors
+          since it’s inception.
       - icon:
           color: primary
           style: float
           name: like
-        title: This Is a Feature
-        text: Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
+        title: First-Rate Course Offerings
+        text: >-
+          Pro Fencing Academy is proud to opens its doors to fencers of all skill
+          levels from beginners all the way through to the nationally competitive.
+          See below to check out class schedules and sign up for our newsletter
+          to stay in the know about special events, class discounts and tournament
+          opportunities!
       - icon:
           color: green
           style: float

@@ -1,6 +1,7 @@
+const withImages = require('next-images');
 const withSvgr = require("next-svgr");
 
-module.exports = withSvgr({
+module.exports = withImages(withSvgr({
   async rewrites() {
     return [
       {
@@ -9,4 +10,4 @@ module.exports = withSvgr({
       },
     ];
   },
-});
+}));
