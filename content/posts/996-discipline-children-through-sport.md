@@ -1,12 +1,12 @@
 ---
-title: One of the great ways to discipline children through sport! Fencing!
+title: Learning Discipline Through Sport
 author: content/authors/resolutesportfencing.md
 date: '2020-01-28T20:30:00.000Z'
 excerpt: >-
   Children can be very difficult to handle at times. But how can you teach them in a manner that won’t harm and affect them in the future?  One of the most common of answers is Sports!!
 ---
 
-One of the great ways to discipline children through sport! Fencing! Children can be very difficult to handle at times. But how can you teach them in a manner that won’t harm and affect them in the future?  One of the most common of answers is Sports!! All sports can teach your child the respect and discipline to help them preform to their best abilities and overall happiness. But one of the greatest sports that is not the most common when teaching your child discipline and respect is Fencing! Fencing has all the abilities to provide your child with lessons they can and will use throughout not only their careers but in life.
+One of the great ways to discipline children through sport: Fencing! Children can be very difficult to handle at times. But how can you teach them in a manner that won’t harm and affect them in the future?  One of the most common of answers is Sports!! All sports can teach your child the respect and discipline to help them preform to their best abilities and overall happiness. But one of the greatest sports that is not the most common when teaching your child discipline and respect is Fencing! Fencing has all the abilities to provide your child with lessons they can and will use throughout not only their careers but in life.
 
 # How we can help!
 
