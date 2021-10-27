@@ -3,16 +3,18 @@ blocks:
   - tagline: ''
     headline: Creating Champions
     text: >-
-      Resolute Sport Fencing trains ages 6 to adult in the epee
-      fencing weapon with successful programs for both experienced
-      and beginner fencers. Additionally, our students have been
-      awarded numerous medals at local, regional and national
-      championships.
+      Resolute Sport Fencing trains ages 6 to adult in the epee fencing weapon
+      with successful programs for both experienced and beginner fencers.
+      Additionally, our students have been awarded numerous medals at local,
+      regional and national championships.
+
+
+      **Start Today. Call:** (407) 221-7991
     actions:
-      - label: Get Started
+      - label: Call Now
         type: button
         icon: true
-        link: /posts
+        link: /contact
       - label: Read Blog
         type: link
         icon: false
@@ -32,20 +34,20 @@ blocks:
         text: >-
           We have an incredibly passionate team here at Pro Fencing Academy.
           Above all, all of our instructors have dedicated decades to the sport
-          in order to compete not just locally but on the national & global stage.
-          Our club has bred many national champions and world cup competitors
-          since it’s inception.
+          in order to compete not just locally but on the national & global
+          stage. Our club has bred many national champions and world cup
+          competitors since it’s inception.
       - icon:
           color: primary
           style: float
           name: like
         title: First-Rate Course Offerings
         text: >-
-          Pro Fencing Academy is proud to opens its doors to fencers of all skill
-          levels from beginners all the way through to the nationally competitive.
-          See below to check out class schedules and sign up for our newsletter
-          to stay in the know about special events, class discounts and tournament
-          opportunities!
+          Pro Fencing Academy is proud to opens its doors to fencers of all
+          skill levels from beginners all the way through to the nationally
+          competitive. See below to check out class schedules and sign up for
+          our newsletter to stay in the know about special events, class
+          discounts and tournament opportunities!
       - icon:
           color: green
           style: float
