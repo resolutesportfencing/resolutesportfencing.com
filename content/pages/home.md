@@ -49,7 +49,14 @@ blocks:
           competitive bouting. We will train you to be a champion!
     color: tint
     _template: features
-  - body: And now I have added a section.
+  - body: >-
+      Fencing is the swordplay recreational sport that people of all ages can
+      enjoy and offers a multitude of advantages.Fencing is a mental and
+      physical exercise in which fencing workers learn to tackle opponents of
+      different levels of skills and increase their physical resilience, agility
+      and accuracy. Trust and sport are gained through fencing participation and
+      extended across other lifestyles. As a young person or adult, you can
+      start fencing –for recreation, exercise and competitive practice.
     _template: content
 ---
 
