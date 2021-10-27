@@ -7,9 +7,6 @@ blocks:
       with successful programs for both experienced and beginner fencers.
       Additionally, our students have been awarded numerous medals at local,
       regional and national championships.
-
-
-      **Start Today. Call:** (407) 221-7991
     actions:
       - label: Call Now
         type: button
