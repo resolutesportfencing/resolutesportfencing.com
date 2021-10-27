@@ -16,6 +16,10 @@
         "label": "About"
       },
       {
+        "href": "classes",
+        "label": "Classes"
+      },
+      {
         "href": "posts",
         "label": "Blog"
       }
