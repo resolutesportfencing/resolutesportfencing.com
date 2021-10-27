@@ -27,32 +27,26 @@ blocks:
           color: red
           style: float
           name: code
-        title: Dedicated Educators
+        title: Basic Fencing
         text: >-
-          We have an incredibly passionate team here at Pro Fencing Academy.
-          Above all, all of our instructors have dedicated decades to the sport
-          in order to compete not just locally but on the national & global
-          stage. Our club has bred many national champions and world cup
-          competitors since it’s inception.
+          We teach you the basics of the sport, from physical and mental
+          conditioning to the handling of the blade and competing.
       - icon:
           color: primary
           style: float
           name: like
-        title: First-Rate Course Offerings
+        title: Intermediate
         text: >-
-          Pro Fencing Academy is proud to opens its doors to fencers of all
-          skill levels from beginners all the way through to the nationally
-          competitive. See below to check out class schedules and sign up for
-          our newsletter to stay in the know about special events, class
-          discounts and tournament opportunities!
+          Higher-level physical and mental conditioning, greater skills and some
+          tournaments. We train hard and also have fun.
       - icon:
           color: green
           style: float
           name: palette
-        title: Configurable Theme
+        title: Competitive
         text: >-
-          Edit global theme configuration with Tina. Change your theme's primary
-          color, font, or icon set.
+          Our most advanced level for those who are fully- committed to
+          competitive bouting. We will train you to be a champion!
     color: tint
     _template: features
   - body: And now I have added a section.
