@@ -20,6 +20,10 @@
         "label": "Classes"
       },
       {
+        "href": "contact",
+        "label": "Contact"
+      },
+      {
         "href": "posts",
         "label": "Blog"
       }

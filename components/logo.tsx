@@ -1,5 +1,4 @@
 import Image from 'next/image'
-//const fencerPic = require('/fencer_salute.png')
 
 export function Logo() {
   return (
