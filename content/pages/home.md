@@ -57,6 +57,22 @@ blocks:
       and accuracy. Trust and sport are gained through fencing participation and
       extended across other lifestyles. As a young person or adult, you can
       start fencing –for recreation, exercise and competitive practice.
+
+
+      Fencing’s three weapons are shield, sabre, and epeé. The object of fencing
+      is to score a point or touch by hitting the target of your opponent with
+      your weapon before they get the touch of scoring on you, but with each
+      weapon the rules, strategies and target areas differ to make the games
+      distinct. As such, most fencers develop a preference and skill for one
+      weapon over the other, but many enjoy the challenge and diversion of once
+      in a while taking on a fight in another weapon, or even developing skills
+      in a second weapon. A rare fencer in all three weapons is an expert!
+    color: tint
+    _template: content
+  - body: >-
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
+      Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse
+      urna nibh, viverra non, semper suscipit, posuere a, pede.
     _template: content
 ---
 
