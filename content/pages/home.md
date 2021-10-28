@@ -70,9 +70,13 @@ blocks:
     color: tint
     _template: content
   - body: >-
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-      Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse
-      urna nibh, viverra non, semper suscipit, posuere a, pede.
+      # **Scholarship Opportunities Available!**
+
+
+      ### **Did You know 90% of high school students enrolled in fencing schools
+      receive scholarships? Enroll your child in our fencing**
+      [**classes**](classes) **today!**
+    color: default
     _template: content
 ---
 
