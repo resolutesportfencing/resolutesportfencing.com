@@ -67,7 +67,7 @@ blocks:
       weapon over the other, but many enjoy the challenge and diversion of once
       in a while taking on a fight in another weapon, or even developing skills
       in a second weapon. A rare fencer in all three weapons is an expert!
-    color: default
+    color: tint
     _template: content
   - body: >-
       # **Scholarship Opportunities Available!**
