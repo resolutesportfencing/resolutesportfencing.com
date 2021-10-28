@@ -34,7 +34,7 @@ blocks:
       - icon:
           color: primary
           style: float
-          name: like
+          name: trophy
         title: Intermediate
         text: >-
           Higher-level physical and mental conditioning, greater skills and some
