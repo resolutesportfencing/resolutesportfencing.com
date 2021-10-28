@@ -51,7 +51,7 @@ blocks:
     _template: features
   - body: >-
       Fencing is the swordplay recreational sport that people of all ages can
-      enjoy and offers a multitude of advantages.Fencing is a mental and
+      enjoy and offers a multitude of advantages. Fencing is a mental and
       physical exercise in which fencing workers learn to tackle opponents of
       different levels of skills and increase their physical resilience, agility
       and accuracy. Trust and sport are gained through fencing participation and
@@ -67,7 +67,7 @@ blocks:
       weapon over the other, but many enjoy the challenge and diversion of once
       in a while taking on a fight in another weapon, or even developing skills
       in a second weapon. A rare fencer in all three weapons is an expert!
-    color: tint
+    color: default
     _template: content
   - body: >-
       # **Scholarship Opportunities Available!**
