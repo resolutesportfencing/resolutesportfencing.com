@@ -76,7 +76,7 @@ blocks:
       ### **Did You know 90% of high school students enrolled in fencing schools
       receive scholarships? Enroll your child in our fencing**
       [**classes**](classes) **today!**
-    color: default
+    color: primary
     _template: content
 ---
 
