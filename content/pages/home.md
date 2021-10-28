@@ -26,7 +26,7 @@ blocks:
       - icon:
           color: red
           style: float
-          name: code
+          name: user
         title: Basic Fencing
         text: >-
           We teach you the basics of the sport, from physical and mental
