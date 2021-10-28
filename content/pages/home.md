@@ -24,7 +24,7 @@ blocks:
     _template: hero
   - items:
       - icon:
-          color: red
+          color: blue
           style: float
           name: user
         title: Basic Fencing
@@ -32,7 +32,7 @@ blocks:
           We teach you the basics of the sport, from physical and mental
           conditioning to the handling of the blade and competing.
       - icon:
-          color: primary
+          color: green
           style: float
           name: trophy
         title: Intermediate
@@ -40,9 +40,9 @@ blocks:
           Higher-level physical and mental conditioning, greater skills and some
           tournaments. We train hard and also have fun.
       - icon:
-          color: green
+          color: yellow
           style: float
-          name: palette
+          name: world
         title: Competitive
         text: >-
           Our most advanced level for those who are fully- committed to
