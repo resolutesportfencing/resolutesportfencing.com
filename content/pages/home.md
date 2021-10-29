@@ -50,32 +50,25 @@ blocks:
     color: tint
     _template: features
   - body: >-
-      Fencing is the swordplay recreational sport that people of all ages can
-      enjoy and offers a multitude of advantages. Fencing is a mental and
-      physical exercise in which fencing workers learn to tackle opponents of
-      different levels of skills and increase their physical resilience, agility
-      and accuracy. Trust and sport are gained through fencing participation and
-      extended across other lifestyles. As a young person or adult, you can
-      start fencing –for recreation, exercise and competitive practice.
+      Fencing is a sport that people of all ages can enjoy and offers a
+      multitude of advantages. Fencing is a mental and physical exercise in
+      which fencers learn to tackle opponents of different levels of skills and
+      increase their physical resilience, agility and accuracy. Skills gained
+      through fencing  extend to all areas of life. As a young person or adult,
+      you can start fencing – for recreation, exercise and competitive practice.
 
 
-      Fencing’s three weapons are shield, sabre, and epeé. The object of fencing
+      Fencing’s three weapons are foil, sabre, and epee. The object of fencing
       is to score a point or touch by hitting the target of your opponent with
       your weapon before they get the touch of scoring on you, but with each
       weapon the rules, strategies and target areas differ to make the games
       distinct. As such, most fencers develop a preference and skill for one
       weapon over the other, but many enjoy the challenge and diversion of once
       in a while taking on a fight in another weapon, or even developing skills
-      in a second weapon. A rare fencer in all three weapons is an expert!
+      in a second weapon. 
     color: tint
     _template: content
-  - body: >-
-      # **Scholarship Opportunities Available!**
-
-
-      ### **Did You know 90% of high school students enrolled in fencing schools
-      receive scholarships? Enroll your child in our fencing**
-      [**classes**](classes) **today!**
+  - body: '### '
     color: primary
     _template: content
 ---
