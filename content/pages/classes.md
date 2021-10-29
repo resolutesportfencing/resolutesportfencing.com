@@ -30,11 +30,15 @@ blocks:
   - body: |-
       ## Pricing
 
-      First Class is free. 
+      First Class is free.
 
       Pricing available for different participation levels.
 
       Call or email for interim rate.
+
+      (407) 221-7991
+
+      info@resolutesportfencing.com
 
       ### Beginner
 
