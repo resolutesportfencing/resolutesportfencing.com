@@ -1,26 +1,20 @@
 ---
 blocks:
-  - body: >-
+  - body: |-
       # Contact
 
-      Resolute Sport Fencing
+      **Resolute Sport Fencing** 
 
-      Address:
+      Address: 
 
-      4270 Aloma Avenue, Suite 182
+      Currently located at Dover Shores Community Center 
 
-      Winter Park, FL 32792
+      1400 Gaston Foster Rd, Orlando, FL 32812 
 
-      Phone: (407) 221-7991
+      Phone: (407) 221-7991 
 
-      Email: info@profencingacademy.com
-
-      Business Hours:
-
-      12:00pm-9:00pm Mon-Fri
-
-      9:00am-3:00pm Sat-Sun
-
-    color: default
+      Email: info@profencingacademy.com 
+    color: primary
     _template: content
 ---
+
