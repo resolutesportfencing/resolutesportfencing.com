@@ -45,9 +45,11 @@ blocks:
     color: default
     _template: content
   - body: >-
-      # Master Coach
+      # Head Coach
+
 
       ## Aleksandr Gromov
+
 
       Master Coach Gromov is originally from Russia and has been fencing since
       the age of 7. He has **over 20 years of coaching experience** from
