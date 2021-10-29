@@ -79,7 +79,7 @@ blocks:
       start fencing –for recreation, exercise and competitive practice.
 
 
-      Fencing’s three weapons are shield, sabre, and epeé. The object of fencing
+      Fencing’s three weapons are shield, sabre, and epee. The object of fencing
       is to score a point or touch by hitting the target of your opponent with
       your weapon before they get the touch of scoring on you, but with each
       weapon the rules, strategies and target areas differ to make the games
@@ -99,15 +99,14 @@ blocks:
       (407) 221-7991
 
 
-      info@profencingacademy.com
+      info@resolutesportfencing.com
 
 
-
-      Looking for a top-notch Orlando Fencing School? Resolute Sport Fencing is
-      where you want to learn from Basic Fencing classes to Intermediate Fencing
-      classes to Competitive Fencing classes – Resolute Sport Fencing has it
-      all. We have been the best fencing coaches for years – Training Fencing
-      Champions one at a time.
+      Looking for a top-notch Fencing School serving Orlando and Winter Park?
+      Resolute Sport Fencing is where you want to learn from Basic Fencing
+      classes to Intermediate Fencing classes to Competitive Fencing classes –
+      Resolute Sport Fencing has it all. We have been the best fencing coaches
+      for years – Training Fencing Champions one at a time.
     color: tint
     _template: content
 ---
