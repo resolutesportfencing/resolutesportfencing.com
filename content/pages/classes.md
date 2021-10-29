@@ -12,8 +12,13 @@ blocks:
       ## Interim Schedule
 
 
-      ### Currently Meeting at Dover Shores Community Center (New Facility
-      coming in 2022)
+      ### Currently Meeting at Dover Shores Community Center
+
+
+      ### 1400 Gaston Foster Rd, Orlando, FL 32812 
+
+
+      ### _New Facility coming in 2022!_
 
 
       * Interim Schedule (epee only)
