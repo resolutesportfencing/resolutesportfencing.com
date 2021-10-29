@@ -29,33 +29,18 @@ blocks:
     _template: content
   - body: |-
       ## Pricing
-      ### Beginner 1
 
-        - $150/Month
-        - (Max 40 Participants)
-        - 3:30 pm - 4:30 pm
-        - 1 class per week at $150 monthly - Training conducted by Angel or Christopher.
+      First Class is free. 
 
-      ### Beginner 2
+      Pricing available for different participation levels.
 
-        - $300/Month
-        - (Max 40 Participants)
-        - 3:30 pm - 4:30 pm
-        - 2-5 classes per week at $300 monthly - Training conducted by Coach Alek
+      Call or email for interim rate.
 
-      ### Competitive 1
+      ### Beginner
 
-        - $425/Month
-        - (Max 25 Participants)
-        - 3:30 pm - 4:30 pm
-        - 3-5 classes per week at $435 monthly - Training conducted by Angel/Christopher One Private Lesson - Conducted by Coach Alek
+      ### Competitive
 
       ### Elite Group
-
-        - $780/Month
-        - (Max 25 Participants)
-        - 6:00 pm - 8:30 pm
-        - 3-5 lessons per week at $780 monthly - Training conducted by Coach Alek
     color: default
     _template: content
   - body: >-
