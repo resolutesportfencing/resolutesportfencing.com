@@ -1,28 +1,30 @@
 ---
 blocks:
   - body: >-
-
       # Classes
+
 
       Welcome to the Best Fencing School in Central Florida!  Walk-ins are
       welcome at all of our practices, so come down and check us out! Set an
       appointment for a time that fits your schedule!
 
-      ## Schedule
 
-      ### Mon, Tue, Wed, Thu, Fri
+      ## Interim Schedule
 
-      - Scheduled Practice 
-        - Normal Conditioning & Fencing Class
 
-      *Private Lessons by appointment only for non-members:* 12:00 pm – 9:00 pm
+      ### Currently Meeting at Dover Shores Community Center (New Facility
+      coming in 2022)
 
-      ### Sat, Sun
 
-      - Weekend Practice
-        - Extensive conditioning & Fencing Class
+      * Interim Schedule (epee only)
+        * Thursday @6pm
+        * Saturday @9am
+        * Sunday @1pm
 
-      *Private Lessons by appointment only for non-members:* 09:00 am – 03:00 pm
+      _Private Lessons by appointment only for non-members:_ 12:00 pm – 9:00 pm
+
+
+      ### 
     color: default
     _template: content
   - body: |-
