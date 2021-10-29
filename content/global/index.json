@@ -32,9 +32,9 @@
   "footer": {
     "color": "default",
     "social": {
-      "facebook": "/",
+      "facebook": "https://www.facebook.com/ResoluteSportFencing",
       "twitter": "/",
-      "instagram": "/"
+      "instagram": "https://www.instagram.com/resolutesportfencing/"
     }
   },
   "theme": {
