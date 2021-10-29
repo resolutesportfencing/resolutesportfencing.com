@@ -90,10 +90,10 @@ blocks:
     color: default
     _template: content
   - body: >-
-      4270 Aloma Avenue, Suite 182
+      Dover Shores Community Center 
 
 
-      Winter Park, FL 32792
+      1400 Gaston Foster Rd, Orlando, FL 32812
 
 
       (407) 221-7991
