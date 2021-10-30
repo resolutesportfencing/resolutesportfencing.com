@@ -50,7 +50,9 @@ export const Header = ({ data }) => {
             <Link href="/" passHref>
               <a className="flex items-center">
                 <Logo />{"    "}
+                <div className="w-full">
                 Resolute Sport Fencing
+                </div>
               </a>
             </Link>
           </h4>

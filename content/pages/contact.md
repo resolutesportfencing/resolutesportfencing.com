@@ -7,7 +7,7 @@ blocks:
     zip: 32812
     phone: (407) 221-7991
     email: info@resolutesportfencing.com
-    color: primary
+    color: tint
     _template: contact
 ---
 
