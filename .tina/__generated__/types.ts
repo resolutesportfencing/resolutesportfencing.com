@@ -240,6 +240,17 @@ export type GlobalHeader = {
   nav?: Maybe<Array<Maybe<GlobalHeaderNav>>>;
 };
 
+export type GlobalContactAddress = {
+  __typename?: 'GlobalContactAddress';
+  street?: Maybe<Scalars['String']>;
+};
+
+export type GlobalContact = {
+  __typename?: 'GlobalContact';
+  color?: Maybe<Scalars['String']>;
+  address?: Maybe<GlobalContactAddress>;
+};
+
 export type GlobalFooterSocial = {
   __typename?: 'GlobalFooterSocial';
   facebook?: Maybe<Scalars['String']>;
@@ -265,6 +276,7 @@ export type GlobalTheme = {
 export type Global = {
   __typename?: 'Global';
   header?: Maybe<GlobalHeader>;
+  contact?: Maybe<GlobalContact>;
   footer?: Maybe<GlobalFooter>;
   theme?: Maybe<GlobalTheme>;
 };
@@ -319,6 +331,18 @@ export type AuthorsConnection = Connection & {
   pageInfo?: Maybe<PageInfo>;
   totalCount: Scalars['Int'];
   edges?: Maybe<Array<Maybe<AuthorsConnectionEdges>>>;
+};
+
+export type PagesBlocksContact = {
+  __typename?: 'PagesBlocksContact';
+  street?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
+  state?: Maybe<Scalars['String']>;
+  zip?: Maybe<Scalars['String']>;
+  email?: Maybe<Scalars['String']>;
+  phone?: Maybe<Scalars['String']>;
+  note?: Maybe<Scalars['String']>;
+  color?: Maybe<Scalars['String']>;
 };
 
 export type PagesBlocksHeroActions = {
@@ -378,7 +402,7 @@ export type PagesBlocksTestimonial = {
   color?: Maybe<Scalars['String']>;
 };
 
-export type PagesBlocks = PagesBlocksHero | PagesBlocksFeatures | PagesBlocksContent | PagesBlocksTestimonial;
+export type PagesBlocks = PagesBlocksContact | PagesBlocksHero | PagesBlocksFeatures | PagesBlocksContent | PagesBlocksTestimonial;
 
 export type Pages = {
   __typename?: 'Pages';
@@ -489,6 +513,15 @@ export type GlobalHeaderMutation = {
   nav?: Maybe<Array<Maybe<GlobalHeaderNavMutation>>>;
 };
 
+export type GlobalContactAddressMutation = {
+  street?: Maybe<Scalars['String']>;
+};
+
+export type GlobalContactMutation = {
+  color?: Maybe<Scalars['String']>;
+  address?: Maybe<GlobalContactAddressMutation>;
+};
+
 export type GlobalFooterSocialMutation = {
   facebook?: Maybe<Scalars['String']>;
   twitter?: Maybe<Scalars['String']>;
@@ -510,6 +543,7 @@ export type GlobalThemeMutation = {
 
 export type GlobalMutation = {
   header?: Maybe<GlobalHeaderMutation>;
+  contact?: Maybe<GlobalContactMutation>;
   footer?: Maybe<GlobalFooterMutation>;
   theme?: Maybe<GlobalThemeMutation>;
 };
@@ -517,6 +551,17 @@ export type GlobalMutation = {
 export type AuthorsMutation = {
   name?: Maybe<Scalars['String']>;
   avatar?: Maybe<Scalars['String']>;
+};
+
+export type PagesBlocksContactMutation = {
+  street?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
+  state?: Maybe<Scalars['String']>;
+  zip?: Maybe<Scalars['String']>;
+  email?: Maybe<Scalars['String']>;
+  phone?: Maybe<Scalars['String']>;
+  note?: Maybe<Scalars['String']>;
+  color?: Maybe<Scalars['String']>;
 };
 
 export type PagesBlocksHeroActionsMutation = {
@@ -569,6 +614,7 @@ export type PagesBlocksTestimonialMutation = {
 };
 
 export type PagesBlocksMutation = {
+  contact?: Maybe<PagesBlocksContactMutation>;
   hero?: Maybe<PagesBlocksHeroMutation>;
   features?: Maybe<PagesBlocksFeaturesMutation>;
   content?: Maybe<PagesBlocksContentMutation>;

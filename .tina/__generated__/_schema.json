@@ -336,6 +336,60 @@
         },
         {
           "type": "object",
+          "label": "Contact",
+          "name": "contact",
+          "fields": [
+            {
+              "type": "string",
+              "label": "Color",
+              "name": "color",
+              "options": [
+                {
+                  "label": "Default",
+                  "value": "default"
+                },
+                {
+                  "label": "Primary",
+                  "value": "primary"
+                }
+              ],
+              "namespace": [
+                "global",
+                "contact",
+                "color"
+              ]
+            },
+            {
+              "type": "object",
+              "label": "Address",
+              "name": "address",
+              "fields": [
+                {
+                  "type": "string",
+                  "label": "Street",
+                  "name": "street",
+                  "namespace": [
+                    "global",
+                    "contact",
+                    "address",
+                    "street"
+                  ]
+                }
+              ],
+              "namespace": [
+                "global",
+                "contact",
+                "address"
+              ]
+            }
+          ],
+          "namespace": [
+            "global",
+            "contact"
+          ]
+        },
+        {
+          "type": "object",
           "label": "Footer",
           "name": "footer",
           "fields": [
@@ -588,6 +642,119 @@
           "name": "blocks",
           "label": "Sections",
           "templates": [
+            {
+              "name": "contact",
+              "label": "Contact",
+              "fields": [
+                {
+                  "type": "string",
+                  "label": "Street",
+                  "name": "street",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "contact",
+                    "street"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "City",
+                  "name": "city",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "contact",
+                    "city"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "State",
+                  "name": "state",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "contact",
+                    "state"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Zipcode",
+                  "name": "zip",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "contact",
+                    "zip"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Email",
+                  "name": "email",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "contact",
+                    "email"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Phone",
+                  "name": "phone",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "contact",
+                    "phone"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Note",
+                  "name": "note",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "contact",
+                    "note"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Color",
+                  "name": "color",
+                  "options": [
+                    {
+                      "label": "Default",
+                      "value": "default"
+                    },
+                    {
+                      "label": "Tint",
+                      "value": "tint"
+                    },
+                    {
+                      "label": "Primary",
+                      "value": "primary"
+                    }
+                  ],
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "contact",
+                    "color"
+                  ]
+                }
+              ],
+              "namespace": [
+                "pages",
+                "blocks",
+                "contact"
+              ]
+            },
             {
               "name": "hero",
               "label": "Hero",

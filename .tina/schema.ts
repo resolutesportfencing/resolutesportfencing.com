@@ -381,6 +381,58 @@ const heroBlockSchema: TinaTemplate = {
   ],
 };
 
+const contactBlockSchema: TinaTemplate = {
+  name: "contact",
+  label: "Contact",
+  fields: [
+    {
+      type: "string",
+      label: "Street",
+      name: "street",
+    },
+    {
+      type: "string",
+      label: "City",
+      name: "city",
+    },
+    {
+      type: "string",
+      label: "State",
+      name: "state",
+    },
+    {
+      type: "string",
+      label: "Zipcode",
+      name: "zip",
+    },
+    {
+      type: "string",
+      label: "Email",
+      name: "email",
+    },
+    {
+      type: "string",
+      label: "Phone",
+      name: "phone",
+    },
+    {
+      type: "string",
+      label: "Note",
+      name: "note",
+    },
+    {
+      type: "string",
+      label: "Color",
+      name: "color",
+      options: [
+        { label: "Default", value: "default" },
+        { label: "Tint", value: "tint" },
+        { label: "Primary", value: "primary" },
+      ],
+    },
+  ],
+};
+
 export default defineSchema({
   collections: [
     {
@@ -473,6 +525,34 @@ export default defineSchema({
                   type: "string",
                   label: "Label",
                   name: "label",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: "object",
+          label: "Contact",
+          name: "contact",
+          fields: [
+            {
+              type: "string",
+              label: "Color",
+              name: "color",
+              options: [
+                { label: "Default", value: "default" },
+                { label: "Primary", value: "primary" },
+              ],
+            },
+            {
+              type: "object",
+              label: "Address",
+              name: "address",
+              fields: [
+                {
+                  type: "string",
+                  label: "Street",
+                  name: "street",
                 },
               ],
             },
@@ -650,6 +730,7 @@ export default defineSchema({
           name: "blocks",
           label: "Sections",
           templates: [
+            contactBlockSchema,
             heroBlockSchema,
             featureBlockShema,
             contentBlockSchema,
