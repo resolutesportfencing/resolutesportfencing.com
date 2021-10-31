@@ -14,16 +14,16 @@ jobs:
           echo "AWS_DEFAULT_REGION=us-east-1" >> $GITHUB_ENV
       - uses: actions/checkout@v2
       - name: Install dependencies
-        if: ${{secrets.DEPLOY_SITE}} == "true"
+        if: ${{ github.repository_owner == 'resolutesportfencing' }}
         uses: borales/actions-yarn@v2.3.0
         with:
           cmd: install
       - name: Export static site
-        if: ${{secrets.DEPLOY_SITE}} == "true"
+        if: ${{ github.repository_owner == 'resolutesportfencing' }}
         uses: borales/actions-yarn@v2.3.0
         with:
           cmd: export
       - name: Copy to S3
-        if: ${{secrets.DEPLOY_SITE}} == "true"
+        if: ${{ github.repository_owner == 'resolutesportfencing' }}
         run: |
           aws s3 sync out s3://resolutesportfencing
