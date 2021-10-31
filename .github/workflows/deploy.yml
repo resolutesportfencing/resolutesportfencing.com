@@ -32,4 +32,4 @@ jobs:
         with:
           cmd: export
       - name: Copy to S3
-        run: aws s3 sync out s3://resolutesportfencing
+        run: AWS_PROFILE=cicd aws s3 sync out s3://resolutesportfencing
