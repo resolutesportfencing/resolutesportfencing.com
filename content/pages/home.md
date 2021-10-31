@@ -68,8 +68,5 @@ blocks:
       in a second weapon. 
     color: tint
     _template: content
-  - body: '### '
-    color: primary
-    _template: content
 ---
 
