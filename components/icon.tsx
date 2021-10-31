@@ -39,7 +39,7 @@ import { FiAperture } from "react-icons/fi";
 import { Theme, ThemeContext } from "./theme";
 import { FaBeer, FaCoffee, FaPalette } from "react-icons/fa";
 // @ts-ignore
-import TinaIconSvg from "../public/tina.svg";
+// import TinaIconSvg from "../public/tina.svg";
 
 const biIconOptions = {
   code: BiCodeBlock,
@@ -61,7 +61,7 @@ const biIconOptions = {
   coffee: BiCoffeeTogo,
   world: BiWorld,
   aperture: FiAperture,
-  tina: TinaIconSvg,
+//  tina: TinaIconSvg,
 };
 
 const heroIconOptions = {
@@ -84,7 +84,7 @@ const heroIconOptions = {
   coffee: FaCoffee,
   world: BiWorld,
   aperture: FiAperture,
-  tina: TinaIconSvg,
+//  tina: TinaIconSvg,
 };
 
 export const Icon = ({ data, parentColor = "", className = "" }) => {

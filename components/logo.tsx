@@ -1,14 +1,9 @@
-import Image from 'next/image'
+import fencerSalute from '../public/fencer_salute.png'
 
 export function Logo() {
   return (
     <div className="mx-auto px-3">
-      <Image
-        src="/fencer_salute.png"
-        alt="Fencer saluting"
-        height={60}
-        width={15} 
-      />
+      <img src={fencerSalute.src} alt="Fencer saluting" height={60} width={15} />
     </div>
   )
 }

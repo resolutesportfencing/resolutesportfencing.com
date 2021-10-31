@@ -208,10 +208,6 @@
                     {
                       "label": "World",
                       "value": "world"
-                    },
-                    {
-                      "label": "Tina",
-                      "value": "tina"
                     }
                   ]
                 }
@@ -844,10 +840,6 @@
                             {
                               "label": "World",
                               "value": "world"
-                            },
-                            {
-                              "label": "Tina",
-                              "value": "tina"
                             }
                           ]
                         }

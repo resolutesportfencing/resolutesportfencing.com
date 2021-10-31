@@ -247,10 +247,6 @@
                     {
                       "label": "World",
                       "value": "world"
-                    },
-                    {
-                      "label": "Tina",
-                      "value": "tina"
                     }
                   ],
                   "namespace": [
@@ -1168,10 +1164,6 @@
                             {
                               "label": "World",
                               "value": "world"
-                            },
-                            {
-                              "label": "Tina",
-                              "value": "tina"
                             }
                           ],
                           "namespace": [

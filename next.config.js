@@ -1,13 +1,6 @@
-const withImages = require('next-images');
-const withSvgr = require("next-svgr");
-
-module.exports = withImages(withSvgr({
-  async rewrites() {
-    return [
-      {
-        source: "/",
-        destination: "/home",
-      },
-    ];
-  },
-}));
+module.exports = {
+  images: {
+    loader: 'cloudinary',
+    domains: ['vercel.app', 'resolutesportfencing.com'],
+  }
+}
