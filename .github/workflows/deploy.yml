@@ -4,6 +4,13 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - name: Configure AWS CLI
+        run: |
+          aws configure --profile cicd set aws_access_key_id ${{secrets.AWS_ACCESS_KEY_ID}}
+          aws configure --profile cicd set aws_secret_access_key ${{secrets.AWS_SECRET_ACCESS_KEY}}
+      - name: Set AWS profile environment variable
+        run: |
+          echo "AWS_PROFILE=cicd" >> $GITHUB_ENV
       - uses: actions/checkout@v2
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -16,10 +23,13 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - uses: borales/actions-yarn@v2.3.0
+      - name: Install dependencies
+        uses: borales/actions-yarn@v2.3.0
         with:
           cmd: install
-      - uses: borales/actions-yarn@v2.3.0
+      - name: Export static site
+        uses: borales/actions-yarn@v2.3.0
         with:
           cmd: export
-
+      - name: Copy to S3
+        run: aws s3 sync out s3://resolutesportfencing
