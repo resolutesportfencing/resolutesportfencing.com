@@ -33,4 +33,4 @@ jobs:
           cmd: export
       - name: Copy to S3
         run: |
-          aws s3 sync out s3://resolutesportfencing
+          aws --debug s3 sync out s3://resolutesportfencing
