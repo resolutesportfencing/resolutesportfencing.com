@@ -1,12 +1,12 @@
-const withSvgr = require("next-svgr");
-
-module.exports = withSvgr({
-  async rewrites() {
-    return [
-      {
-        source: "/",
-        destination: "/home",
-      },
-    ];
+module.exports = {
+  images: {
+    loader: 'cloudinary',
+    domains: ['vercel.app', 'resolutesportfencing.com'],
   },
-});
+  trailingSlash: false,
+  async exportPathMap(defaultPathMap) {
+    return {
+      '/': { page: 'index' },
+    };
+  }
+}

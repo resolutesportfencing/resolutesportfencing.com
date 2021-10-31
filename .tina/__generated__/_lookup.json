@@ -89,6 +89,7 @@
     "type": "PagesBlocks",
     "resolveType": "unionData",
     "typeMap": {
+      "contact": "PagesBlocksContact",
       "hero": "PagesBlocksHero",
       "features": "PagesBlocksFeatures",
       "content": "PagesBlocksContent",

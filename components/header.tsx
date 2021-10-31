@@ -2,8 +2,9 @@ import React from "react";
 import Link from "next/link";
 import { Container } from "./container";
 import { ThemeContext } from "./theme";
-import { Icon } from "./icon";
+import { Logo } from "./logo";
 import { useRouter } from "next/router";
+
 
 export const Header = ({ data }) => {
   const theme = React.useContext(ThemeContext);
@@ -48,16 +49,10 @@ export const Header = ({ data }) => {
           <h4 className="select-none text-lg font-bold tracking-tight my-4 transition duration-150 ease-out transform">
             <Link href="/" passHref>
               <a className="flex items-center">
-                <Icon
-                  parentColor={data.color}
-                  data={{
-                    name: data.icon.name,
-                    color: data.icon.color,
-                    size: "custom",
-                  }}
-                  className="inline-block h-auto w-10 mr-1"
-                />{" "}
-                Tina Starter
+                <Logo />{"    "}
+                <div className="w-full">
+                Resolute Sport Fencing
+                </div>
               </a>
             </Link>
           </h4>

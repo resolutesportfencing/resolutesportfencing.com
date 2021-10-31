@@ -1,57 +1,72 @@
 ---
 blocks:
   - tagline: ''
-    headline: Welcome to the Tina Starter.
+    headline: Creating Champions
     text: >-
-      This project is set up to show you the basics of working with Tina. You're
-      looking at the landing page, which pulls content from
-      `content/pages/home.md`, components from `components/blocks`, and puts
-      them all together in `pages/[filename].tsx`, all based on a schema defined
-      in `.tina/schema.ts`.
-
-
-      test69
+      Resolute Sport Fencing trains ages 6 to adult in the epee fencing weapon
+      with successful programs for both experienced and beginner fencers.
+      Additionally, our students have been awarded numerous medals at local,
+      regional and national championships.
     actions:
-      - label: Get Started
+      - label: Contact Us
         type: button
         icon: true
-        link: /posts
+        link: /contact
       - label: Read Blog
         type: link
         icon: false
         link: /posts
     image:
       src: >-
-        https://res.cloudinary.com/forestry-demo/image/upload/v1628102029/tina-cloud-starter/tina-illustration.WebP
-      alt: Tina
+        http://res.cloudinary.com/dd8lpdgt2/image/upload/v1632002014/resolute_portrait_fovzct.png
+      alt: Resolute Sport Fencing
     color: default
     _template: hero
   - items:
       - icon:
-          color: red
+          color: blue
           style: float
-          name: code
-        title: Amazing Feature
+          name: user
+        title: Basic Fencing
         text: >-
-          Aliquam blandit felis rhoncus, eleifend ipsum in, condimentum nibh.
-          Praesent ac faucibus risus, eu lacinia enim.
-      - icon:
-          color: primary
-          style: float
-          name: like
-        title: This Is a Feature
-        text: Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
+          We teach you the basics of the sport, from physical and mental
+          conditioning to the handling of the blade and competing.
       - icon:
           color: green
           style: float
-          name: palette
-        title: Configurable Theme
+          name: trophy
+        title: Intermediate
         text: >-
-          Edit global theme configuration with Tina. Change your theme's primary
-          color, font, or icon set.
+          Higher-level physical and mental conditioning, greater skills and some
+          tournaments. We train hard and also have fun.
+      - icon:
+          color: yellow
+          style: float
+          name: world
+        title: Competitive
+        text: >-
+          Our most advanced level for those who are fully- committed to
+          competitive bouting. We will train you to be a champion!
     color: tint
     _template: features
-  - body: And now I have added a section.
+  - body: >-
+      Fencing is a sport that people of all ages can enjoy and offers a
+      multitude of advantages. Fencing is a mental and physical exercise in
+      which fencers learn to tackle opponents of different levels of skills and
+      increase their physical resilience, agility and accuracy. Skills gained
+      through fencing  extend to all areas of life. As a young person or adult,
+      you can start fencing – for recreation, exercise and competitive practice.
+
+
+      Fencing’s three weapons are foil, sabre, and epee. The object of fencing
+      is to score a point or touch by hitting the target of your opponent with
+      your weapon before they get the touch of scoring on you, but with each
+      weapon the rules, strategies and target areas differ to make the games
+      distinct. As such, most fencers develop a preference and skill for one
+      weapon over the other, but many enjoy the challenge and diversion of once
+      in a while taking on a fight in another weapon, or even developing skills
+      in a second weapon. 
+    color: tint
     _template: content
 ---
 

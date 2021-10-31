@@ -128,6 +128,15 @@ type GlobalHeader {
   nav: [GlobalHeaderNav]
 }
 
+type GlobalContactAddress {
+  street: String
+}
+
+type GlobalContact {
+  color: String
+  address: GlobalContactAddress
+}
+
 type GlobalFooterSocial {
   facebook: String
   twitter: String
@@ -149,6 +158,7 @@ type GlobalTheme {
 
 type Global {
   header: GlobalHeader
+  contact: GlobalContact
   footer: GlobalFooter
   theme: GlobalTheme
 }
@@ -196,6 +206,17 @@ type AuthorsConnection implements Connection {
   pageInfo: PageInfo
   totalCount: Int!
   edges: [AuthorsConnectionEdges]
+}
+
+type PagesBlocksContact {
+  street: String
+  city: String
+  state: String
+  zip: String
+  email: String
+  phone: String
+  note: String
+  color: String
 }
 
 type PagesBlocksHeroActions {
@@ -247,7 +268,7 @@ type PagesBlocksTestimonial {
   color: String
 }
 
-union PagesBlocks = PagesBlocksHero | PagesBlocksFeatures | PagesBlocksContent | PagesBlocksTestimonial
+union PagesBlocks = PagesBlocksContact | PagesBlocksHero | PagesBlocksFeatures | PagesBlocksContent | PagesBlocksTestimonial
 
 type Pages {
   blocks: [PagesBlocks]
@@ -315,6 +336,15 @@ input GlobalHeaderMutation {
   nav: [GlobalHeaderNavMutation]
 }
 
+input GlobalContactAddressMutation {
+  street: String
+}
+
+input GlobalContactMutation {
+  color: String
+  address: GlobalContactAddressMutation
+}
+
 input GlobalFooterSocialMutation {
   facebook: String
   twitter: String
@@ -336,6 +366,7 @@ input GlobalThemeMutation {
 
 input GlobalMutation {
   header: GlobalHeaderMutation
+  contact: GlobalContactMutation
   footer: GlobalFooterMutation
   theme: GlobalThemeMutation
 }
@@ -343,6 +374,17 @@ input GlobalMutation {
 input AuthorsMutation {
   name: String
   avatar: String
+}
+
+input PagesBlocksContactMutation {
+  street: String
+  city: String
+  state: String
+  zip: String
+  email: String
+  phone: String
+  note: String
+  color: String
 }
 
 input PagesBlocksHeroActionsMutation {
@@ -395,6 +437,7 @@ input PagesBlocksTestimonialMutation {
 }
 
 input PagesBlocksMutation {
+  contact: PagesBlocksContactMutation
   hero: PagesBlocksHeroMutation
   features: PagesBlocksFeaturesMutation
   content: PagesBlocksContentMutation

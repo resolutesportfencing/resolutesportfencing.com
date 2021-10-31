@@ -16,6 +16,14 @@
         "label": "About"
       },
       {
+        "href": "classes",
+        "label": "Classes"
+      },
+      {
+        "href": "contact",
+        "label": "Contact"
+      },
+      {
         "href": "posts",
         "label": "Blog"
       }
@@ -24,9 +32,9 @@
   "footer": {
     "color": "default",
     "social": {
-      "facebook": "/",
+      "facebook": "https://www.facebook.com/ResoluteSportFencing",
       "twitter": "/",
-      "instagram": "/"
+      "instagram": "https://www.instagram.com/resolutesportfencing/"
     }
   },
   "theme": {
