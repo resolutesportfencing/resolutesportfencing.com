@@ -33,10 +33,10 @@ export const Post = ({ data }) => {
     <Section className="flex-1">
       <Container className={`flex-1 max-w-4xl pb-2`} size="large">
         <h2
-          className={`w-full relative	mb-8 text-6xl leading-tight font-extrabold tracking-normal text-center title-font`}
+          className={`w-full block relative mb-8 text-6xl leading-tight font-extrabold tracking-normal text-center title-font`}
         >
           <span
-            className={`bg-clip-text text-transparent bg-gradient-to-r ${
+            className={`bg-clip-text inline-block text-transparent bg-gradient-to-r ${
               titleColorClasses[theme.color]
             }`}
           >
