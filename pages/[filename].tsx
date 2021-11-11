@@ -43,6 +43,16 @@ export const getStaticProps = async ({ params }) => {
                 note
                 color
               }
+              ... on PagesBlocksCopyrightImage {
+                attribution
+                license
+                licenseUrl
+                color
+                image {
+                  src
+                  alt
+                }
+              }
               ... on PagesBlocksContent {
                 body
                 color

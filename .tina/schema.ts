@@ -377,6 +377,55 @@ const heroBlockSchema: TinaTemplate = {
   ],
 };
 
+const copyrightImageSchema: TinaTemplate = {
+  name: "copyrightImage",
+  label: "Image w/ Copyright",
+  fields: [
+    {
+      type: "string",
+      label: "Attribution",
+      name: "attribution",
+    },
+    {
+      type: "string",
+      label: "License",
+      name: "license",
+    },
+    {
+      type: "string",
+      label: "License Link",
+      name: "licenseUrl",
+    },
+    {
+      type: "object",
+      label: "Image",
+      name: "image",
+      fields: [
+        {
+          name: "src",
+          label: "Image Source",
+          type: "image",
+        },
+        {
+          name: "alt",
+          label: "Alt Text",
+          type: "string",
+        },
+      ],
+    },
+    {
+      type: "string",
+      label: "Color",
+      name: "color",
+      options: [
+        { label: "Default", value: "default" },
+        { label: "Tint", value: "tint" },
+        { label: "Primary", value: "primary" },
+      ],
+    },
+  ],
+};
+
 const contactBlockSchema: TinaTemplate = {
   name: "contact",
   label: "Contact",
@@ -727,6 +776,7 @@ export default defineSchema({
           label: "Sections",
           templates: [
             contactBlockSchema,
+            copyrightImageSchema,
             heroBlockSchema,
             featureBlockShema,
             contentBlockSchema,

@@ -90,6 +90,7 @@
     "resolveType": "unionData",
     "typeMap": {
       "contact": "PagesBlocksContact",
+      "copyrightImage": "PagesBlocksCopyrightImage",
       "hero": "PagesBlocksHero",
       "features": "PagesBlocksFeatures",
       "content": "PagesBlocksContent",

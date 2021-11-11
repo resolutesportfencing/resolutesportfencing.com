@@ -2934,6 +2934,133 @@
       "directives": [],
       "name": {
         "kind": "Name",
+        "value": "PagesBlocksCopyrightImageImage"
+      },
+      "fields": [
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "src"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "alt"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "ObjectTypeDefinition",
+      "interfaces": [],
+      "directives": [],
+      "name": {
+        "kind": "Name",
+        "value": "PagesBlocksCopyrightImage"
+      },
+      "fields": [
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "attribution"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "license"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "licenseUrl"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "image"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "PagesBlocksCopyrightImageImage"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "color"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "ObjectTypeDefinition",
+      "interfaces": [],
+      "directives": [],
+      "name": {
+        "kind": "Name",
         "value": "PagesBlocksHeroActions"
       },
       "fields": [
@@ -3410,6 +3537,13 @@
           "name": {
             "kind": "Name",
             "value": "PagesBlocksContact"
+          }
+        },
+        {
+          "kind": "NamedType",
+          "name": {
+            "kind": "Name",
+            "value": "PagesBlocksCopyrightImage"
           }
         },
         {
@@ -4830,6 +4964,122 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
+        "value": "PagesBlocksCopyrightImageImageMutation"
+      },
+      "fields": [
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "src"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "alt"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "InputObjectTypeDefinition",
+      "name": {
+        "kind": "Name",
+        "value": "PagesBlocksCopyrightImageMutation"
+      },
+      "fields": [
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "attribution"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "license"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "licenseUrl"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "image"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "PagesBlocksCopyrightImageImageMutation"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "color"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "InputObjectTypeDefinition",
+      "name": {
+        "kind": "Name",
         "value": "PagesBlocksHeroActionsMutation"
       },
       "fields": [
@@ -5272,6 +5522,20 @@
             "name": {
               "kind": "Name",
               "value": "PagesBlocksContactMutation"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "copyrightImage"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "PagesBlocksCopyrightImageMutation"
             }
           }
         },

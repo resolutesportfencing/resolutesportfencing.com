@@ -345,6 +345,21 @@ export type PagesBlocksContact = {
   color?: Maybe<Scalars['String']>;
 };
 
+export type PagesBlocksCopyrightImageImage = {
+  __typename?: 'PagesBlocksCopyrightImageImage';
+  src?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type PagesBlocksCopyrightImage = {
+  __typename?: 'PagesBlocksCopyrightImage';
+  attribution?: Maybe<Scalars['String']>;
+  license?: Maybe<Scalars['String']>;
+  licenseUrl?: Maybe<Scalars['String']>;
+  image?: Maybe<PagesBlocksCopyrightImageImage>;
+  color?: Maybe<Scalars['String']>;
+};
+
 export type PagesBlocksHeroActions = {
   __typename?: 'PagesBlocksHeroActions';
   label?: Maybe<Scalars['String']>;
@@ -402,7 +417,7 @@ export type PagesBlocksTestimonial = {
   color?: Maybe<Scalars['String']>;
 };
 
-export type PagesBlocks = PagesBlocksContact | PagesBlocksHero | PagesBlocksFeatures | PagesBlocksContent | PagesBlocksTestimonial;
+export type PagesBlocks = PagesBlocksContact | PagesBlocksCopyrightImage | PagesBlocksHero | PagesBlocksFeatures | PagesBlocksContent | PagesBlocksTestimonial;
 
 export type Pages = {
   __typename?: 'Pages';
@@ -564,6 +579,19 @@ export type PagesBlocksContactMutation = {
   color?: Maybe<Scalars['String']>;
 };
 
+export type PagesBlocksCopyrightImageImageMutation = {
+  src?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type PagesBlocksCopyrightImageMutation = {
+  attribution?: Maybe<Scalars['String']>;
+  license?: Maybe<Scalars['String']>;
+  licenseUrl?: Maybe<Scalars['String']>;
+  image?: Maybe<PagesBlocksCopyrightImageImageMutation>;
+  color?: Maybe<Scalars['String']>;
+};
+
 export type PagesBlocksHeroActionsMutation = {
   label?: Maybe<Scalars['String']>;
   type?: Maybe<Scalars['String']>;
@@ -615,6 +643,7 @@ export type PagesBlocksTestimonialMutation = {
 
 export type PagesBlocksMutation = {
   contact?: Maybe<PagesBlocksContactMutation>;
+  copyrightImage?: Maybe<PagesBlocksCopyrightImageMutation>;
   hero?: Maybe<PagesBlocksHeroMutation>;
   features?: Maybe<PagesBlocksFeaturesMutation>;
   content?: Maybe<PagesBlocksContentMutation>;
