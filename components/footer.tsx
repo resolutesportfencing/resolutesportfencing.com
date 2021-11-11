@@ -5,7 +5,6 @@ import TinaIconSvg from "../public/tina.svg";
 import { FaFacebookF, FaGithub, FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { Container } from "./container";
-import { RawRenderer } from "./rawRenderer";
 import { ThemeContext } from "./theme";
 
 export const Footer = ({ data, icon, rawData }) => {
@@ -109,7 +108,6 @@ export const Footer = ({ data, icon, rawData }) => {
               </a>
             )}
           </div>
-          <RawRenderer parentColor={data.color} rawData={rawData} />
         </div>
         <div
           className={`absolute h-1 bg-gradient-to-r from-transparent ${
