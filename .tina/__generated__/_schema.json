@@ -752,6 +752,112 @@
               ]
             },
             {
+              "name": "copyrightImage",
+              "label": "Image w/ Copyright",
+              "fields": [
+                {
+                  "type": "string",
+                  "label": "Attribution",
+                  "name": "attribution",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "copyrightImage",
+                    "attribution"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "License",
+                  "name": "license",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "copyrightImage",
+                    "license"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "License Link",
+                  "name": "licenseUrl",
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "copyrightImage",
+                    "licenseUrl"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "label": "Image",
+                  "name": "image",
+                  "fields": [
+                    {
+                      "name": "src",
+                      "label": "Image Source",
+                      "type": "image",
+                      "namespace": [
+                        "pages",
+                        "blocks",
+                        "copyrightImage",
+                        "image",
+                        "src"
+                      ]
+                    },
+                    {
+                      "name": "alt",
+                      "label": "Alt Text",
+                      "type": "string",
+                      "namespace": [
+                        "pages",
+                        "blocks",
+                        "copyrightImage",
+                        "image",
+                        "alt"
+                      ]
+                    }
+                  ],
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "copyrightImage",
+                    "image"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Color",
+                  "name": "color",
+                  "options": [
+                    {
+                      "label": "Default",
+                      "value": "default"
+                    },
+                    {
+                      "label": "Tint",
+                      "value": "tint"
+                    },
+                    {
+                      "label": "Primary",
+                      "value": "primary"
+                    }
+                  ],
+                  "namespace": [
+                    "pages",
+                    "blocks",
+                    "copyrightImage",
+                    "color"
+                  ]
+                }
+              ],
+              "namespace": [
+                "pages",
+                "blocks",
+                "copyrightImage"
+              ]
+            },
+            {
               "name": "hero",
               "label": "Hero",
               "ui": {

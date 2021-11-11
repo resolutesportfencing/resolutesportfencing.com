@@ -219,6 +219,19 @@ type PagesBlocksContact {
   color: String
 }
 
+type PagesBlocksCopyrightImageImage {
+  src: String
+  alt: String
+}
+
+type PagesBlocksCopyrightImage {
+  attribution: String
+  license: String
+  licenseUrl: String
+  image: PagesBlocksCopyrightImageImage
+  color: String
+}
+
 type PagesBlocksHeroActions {
   label: String
   type: String
@@ -268,7 +281,7 @@ type PagesBlocksTestimonial {
   color: String
 }
 
-union PagesBlocks = PagesBlocksContact | PagesBlocksHero | PagesBlocksFeatures | PagesBlocksContent | PagesBlocksTestimonial
+union PagesBlocks = PagesBlocksContact | PagesBlocksCopyrightImage | PagesBlocksHero | PagesBlocksFeatures | PagesBlocksContent | PagesBlocksTestimonial
 
 type Pages {
   blocks: [PagesBlocks]
@@ -387,6 +400,19 @@ input PagesBlocksContactMutation {
   color: String
 }
 
+input PagesBlocksCopyrightImageImageMutation {
+  src: String
+  alt: String
+}
+
+input PagesBlocksCopyrightImageMutation {
+  attribution: String
+  license: String
+  licenseUrl: String
+  image: PagesBlocksCopyrightImageImageMutation
+  color: String
+}
+
 input PagesBlocksHeroActionsMutation {
   label: String
   type: String
@@ -438,6 +464,7 @@ input PagesBlocksTestimonialMutation {
 
 input PagesBlocksMutation {
   contact: PagesBlocksContactMutation
+  copyrightImage: PagesBlocksCopyrightImageMutation
   hero: PagesBlocksHeroMutation
   features: PagesBlocksFeaturesMutation
   content: PagesBlocksContentMutation
