@@ -50,12 +50,13 @@ blocks:
     color: tint
     _template: features
   - body: >-
-      Fencing is a sport that people of all ages can enjoy and offers a
-      multitude of advantages. Fencing is a mental and physical exercise in
-      which fencers learn to tackle opponents of different levels of skills and
-      increase their physical resilience, agility and accuracy. Skills gained
-      through fencing  extend to all areas of life. As a young person or adult,
-      you can start fencing – for recreation, exercise and competitive practice.
+      ![](http://res.cloudinary.com/dd8lpdgt2/image/upload/v1636592054/Final_Trophee_Monal_2012_n08_zr4qtq.jpg)Fencing
+      is a sport that people of all ages can enjoy and offers a multitude of
+      advantages. Fencing is a mental and physical exercise in which fencers
+      learn to tackle opponents of different levels of skills and increase their
+      physical resilience, agility and accuracy. Skills gained through fencing 
+      extend to all areas of life. As a young person or adult, you can start
+      fencing – for recreation, exercise and competitive practice.
 
 
       Fencing’s three weapons are foil, sabre, and epee. The object of fencing
@@ -65,7 +66,7 @@ blocks:
       distinct. As such, most fencers develop a preference and skill for one
       weapon over the other, but many enjoy the challenge and diversion of once
       in a while taking on a fight in another weapon, or even developing skills
-      in a second weapon. 
+      in a second weapon.
     color: tint
     _template: content
 ---
