@@ -53,8 +53,6 @@ blocks:
       src: >-
         http://res.cloudinary.com/dd8lpdgt2/image/upload/v1636592054/Final_Trophee_Monal_2012_n08_zr4qtq.jpg
       alt: Resolute Sport Fencing
-    license: CC BY 2.5
-    licenseUrl: https://creativecommons.org/licenses/by/2.5/
     attribution: © Marie-Lan Nguyen / [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page) / [CC BY 2.5](https://creativecommons.org/licenses/by/2.5/)
     color: tint
     _template: copyrightImage

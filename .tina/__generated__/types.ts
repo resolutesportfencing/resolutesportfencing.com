@@ -354,8 +354,6 @@ export type PagesBlocksCopyrightImageImage = {
 export type PagesBlocksCopyrightImage = {
   __typename?: 'PagesBlocksCopyrightImage';
   attribution?: Maybe<Scalars['String']>;
-  license?: Maybe<Scalars['String']>;
-  licenseUrl?: Maybe<Scalars['String']>;
   image?: Maybe<PagesBlocksCopyrightImageImage>;
   color?: Maybe<Scalars['String']>;
 };
@@ -586,8 +584,6 @@ export type PagesBlocksCopyrightImageImageMutation = {
 
 export type PagesBlocksCopyrightImageMutation = {
   attribution?: Maybe<Scalars['String']>;
-  license?: Maybe<Scalars['String']>;
-  licenseUrl?: Maybe<Scalars['String']>;
   image?: Maybe<PagesBlocksCopyrightImageImageMutation>;
   color?: Maybe<Scalars['String']>;
 };

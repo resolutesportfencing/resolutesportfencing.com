@@ -44,19 +44,19 @@ export const Header = ({ data }) => {
 
   return (
     <div className={`bg-gradient-to-b ${headerColorCss}`}>
-      <Container className="py-0 relative z-10 max-w-8xl">
+      <Container className="py-0 relative z-10 max-w-full sm:max-w-8xl">
         <div className="flex items-center justify-between">
           <h4 className="select-none text-lg font-bold tracking-tight my-4 transition duration-150 ease-out transform">
             <Link href="/" passHref>
               <a className="flex items-center">
                 <Logo />{"    "}
-                <div className="w-full">
+                <div className="w-full text-xs sm:text-base">
                 Resolute Sport Fencing
                 </div>
               </a>
             </Link>
           </h4>
-          <ul className="flex gap-6 sm:gap-8 lg:gap-10">
+          <ul className="flex gap-1 sm:gap-8 lg:gap-10">
             {data.nav &&
               data.nav.map((item, i) => {
                 const route =
@@ -69,7 +69,7 @@ export const Header = ({ data }) => {
                     className={activeItem ? activeItemClasses[theme.color] : ""}
                   >
                     <Link href={`/${item.href || "home"}`}>
-                      <a className="select-none	text-base inline-block tracking-wide font-regular transition duration-150 ease-out opacity-70 hover:opacity-100 py-8">
+                      <a className="select-none	text-xs sm:text-base inline-block tracking-wide font-regular transition duration-150 ease-out opacity-70 hover:opacity-100 py-8">
                         {item.label}
                       </a>
                     </Link>
