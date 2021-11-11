@@ -45,8 +45,6 @@ export const getStaticProps = async ({ params }) => {
               }
               ... on PagesBlocksCopyrightImage {
                 attribution
-                license
-                licenseUrl
                 color
                 image {
                   src

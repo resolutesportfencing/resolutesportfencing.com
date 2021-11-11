@@ -226,8 +226,6 @@ type PagesBlocksCopyrightImageImage {
 
 type PagesBlocksCopyrightImage {
   attribution: String
-  license: String
-  licenseUrl: String
   image: PagesBlocksCopyrightImageImage
   color: String
 }
@@ -407,8 +405,6 @@ input PagesBlocksCopyrightImageImageMutation {
 
 input PagesBlocksCopyrightImageMutation {
   attribution: String
-  license: String
-  licenseUrl: String
   image: PagesBlocksCopyrightImageImageMutation
   color: String
 }

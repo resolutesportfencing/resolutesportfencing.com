@@ -759,33 +759,14 @@
                   "type": "string",
                   "label": "Attribution",
                   "name": "attribution",
+                  "ui": {
+                    "component": "markdown"
+                  },
                   "namespace": [
                     "pages",
                     "blocks",
                     "copyrightImage",
                     "attribution"
-                  ]
-                },
-                {
-                  "type": "string",
-                  "label": "License",
-                  "name": "license",
-                  "namespace": [
-                    "pages",
-                    "blocks",
-                    "copyrightImage",
-                    "license"
-                  ]
-                },
-                {
-                  "type": "string",
-                  "label": "License Link",
-                  "name": "licenseUrl",
-                  "namespace": [
-                    "pages",
-                    "blocks",
-                    "copyrightImage",
-                    "licenseUrl"
                   ]
                 },
                 {

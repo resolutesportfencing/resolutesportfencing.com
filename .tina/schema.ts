@@ -385,16 +385,9 @@ const copyrightImageSchema: TinaTemplate = {
       type: "string",
       label: "Attribution",
       name: "attribution",
-    },
-    {
-      type: "string",
-      label: "License",
-      name: "license",
-    },
-    {
-      type: "string",
-      label: "License Link",
-      name: "licenseUrl",
+      ui: {
+        component: "markdown",
+      },
     },
     {
       type: "object",
