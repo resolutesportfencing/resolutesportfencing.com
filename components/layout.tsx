@@ -4,8 +4,10 @@ import { Header } from "./header";
 import { Footer } from "./footer";
 import layoutData from "../content/global/index.json";
 import { Theme } from "./theme";
+import ReactGA from 'react-ga';
 
 export const Layout = ({ rawData = "", data = layoutData, children }) => {
+
   return (
     <>
       <Head>
@@ -31,6 +33,22 @@ export const Layout = ({ rawData = "", data = layoutData, children }) => {
             />
           </>
         )}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=G-LXZKS1E6VC`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LXZKS1E6VC', {
+            page_path: window.location.pathname,
+          });
+        `,
+          }}
+        />
       </Head>
       <Theme data={data?.theme}>
         <div
