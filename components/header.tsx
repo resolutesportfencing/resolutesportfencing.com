@@ -5,7 +5,7 @@ import { ThemeContext } from "./theme";
 import { Logo } from "./logo";
 import { useEffect } from 'react'
 import { useRouter } from "next/router";
-import * as ga from '../pages/ga'
+import * as ga from '../lib/ga'
 
 
 export const Header = ({ data }) => {
