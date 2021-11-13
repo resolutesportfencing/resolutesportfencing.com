@@ -3,7 +3,7 @@ module.exports = {
     loader: 'cloudinary',
     domains: ['vercel.app', 'resolutesportfencing.com'],
   },
-  trailingSlash: false,
+  trailingSlash: true,
   async exportPathMap(defaultPathMap) {
     return {
       '/': { page: 'index' },
