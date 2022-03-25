@@ -106,6 +106,7 @@ export type QueryGetDocumentListArgs = {
   first?: InputMaybe<Scalars['Float']>;
   last?: InputMaybe<Scalars['Float']>;
   sort?: InputMaybe<Scalars['String']>;
+  filter?: InputMaybe<DocumentFilter>;
 };
 
 
@@ -120,6 +121,7 @@ export type QueryGetPostsListArgs = {
   first?: InputMaybe<Scalars['Float']>;
   last?: InputMaybe<Scalars['Float']>;
   sort?: InputMaybe<Scalars['String']>;
+  filter?: InputMaybe<PostsFilter>;
 };
 
 
@@ -134,6 +136,7 @@ export type QueryGetGlobalListArgs = {
   first?: InputMaybe<Scalars['Float']>;
   last?: InputMaybe<Scalars['Float']>;
   sort?: InputMaybe<Scalars['String']>;
+  filter?: InputMaybe<GlobalFilter>;
 };
 
 
@@ -148,6 +151,7 @@ export type QueryGetAuthorsListArgs = {
   first?: InputMaybe<Scalars['Float']>;
   last?: InputMaybe<Scalars['Float']>;
   sort?: InputMaybe<Scalars['String']>;
+  filter?: InputMaybe<AuthorsFilter>;
 };
 
 
@@ -162,6 +166,195 @@ export type QueryGetPagesListArgs = {
   first?: InputMaybe<Scalars['Float']>;
   last?: InputMaybe<Scalars['Float']>;
   sort?: InputMaybe<Scalars['String']>;
+  filter?: InputMaybe<PagesFilter>;
+};
+
+export type StringFilter = {
+  startsWith?: InputMaybe<Scalars['String']>;
+  eq?: InputMaybe<Scalars['String']>;
+  exists?: InputMaybe<Scalars['Boolean']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type AuthorsFilter = {
+  name?: InputMaybe<StringFilter>;
+  avatar?: InputMaybe<StringFilter>;
+};
+
+export type PostsAuthorFilter = {
+  authors?: InputMaybe<AuthorsFilter>;
+};
+
+export type DatetimeFilter = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  eq?: InputMaybe<Scalars['String']>;
+  exists?: InputMaybe<Scalars['Boolean']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type ImageFilter = {
+  startsWith?: InputMaybe<Scalars['String']>;
+  eq?: InputMaybe<Scalars['String']>;
+  exists?: InputMaybe<Scalars['Boolean']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type PostsFilter = {
+  title?: InputMaybe<StringFilter>;
+  author?: InputMaybe<PostsAuthorFilter>;
+  date?: InputMaybe<DatetimeFilter>;
+  heroImg?: InputMaybe<ImageFilter>;
+  excerpt?: InputMaybe<StringFilter>;
+  body?: InputMaybe<StringFilter>;
+};
+
+export type GlobalHeaderIconFilter = {
+  color?: InputMaybe<StringFilter>;
+  style?: InputMaybe<StringFilter>;
+  name?: InputMaybe<StringFilter>;
+};
+
+export type GlobalHeaderNavFilter = {
+  href?: InputMaybe<StringFilter>;
+  label?: InputMaybe<StringFilter>;
+};
+
+export type GlobalHeaderFilter = {
+  icon?: InputMaybe<GlobalHeaderIconFilter>;
+  color?: InputMaybe<StringFilter>;
+  nav?: InputMaybe<GlobalHeaderNavFilter>;
+};
+
+export type GlobalContactAddressFilter = {
+  street?: InputMaybe<StringFilter>;
+};
+
+export type GlobalContactFilter = {
+  color?: InputMaybe<StringFilter>;
+  address?: InputMaybe<GlobalContactAddressFilter>;
+};
+
+export type GlobalFooterSocialFilter = {
+  facebook?: InputMaybe<StringFilter>;
+  twitter?: InputMaybe<StringFilter>;
+  instagram?: InputMaybe<StringFilter>;
+  github?: InputMaybe<StringFilter>;
+};
+
+export type GlobalFooterFilter = {
+  color?: InputMaybe<StringFilter>;
+  social?: InputMaybe<GlobalFooterSocialFilter>;
+};
+
+export type GlobalThemeFilter = {
+  color?: InputMaybe<StringFilter>;
+  font?: InputMaybe<StringFilter>;
+  icon?: InputMaybe<StringFilter>;
+  darkMode?: InputMaybe<StringFilter>;
+};
+
+export type GlobalFilter = {
+  header?: InputMaybe<GlobalHeaderFilter>;
+  contact?: InputMaybe<GlobalContactFilter>;
+  footer?: InputMaybe<GlobalFooterFilter>;
+  theme?: InputMaybe<GlobalThemeFilter>;
+};
+
+export type PagesBlocksContactFilter = {
+  street?: InputMaybe<StringFilter>;
+  city?: InputMaybe<StringFilter>;
+  state?: InputMaybe<StringFilter>;
+  zip?: InputMaybe<StringFilter>;
+  email?: InputMaybe<StringFilter>;
+  phone?: InputMaybe<StringFilter>;
+  note?: InputMaybe<StringFilter>;
+  color?: InputMaybe<StringFilter>;
+};
+
+export type PagesBlocksCopyrightImageImageFilter = {
+  src?: InputMaybe<ImageFilter>;
+  alt?: InputMaybe<StringFilter>;
+};
+
+export type PagesBlocksCopyrightImageFilter = {
+  attribution?: InputMaybe<StringFilter>;
+  image?: InputMaybe<PagesBlocksCopyrightImageImageFilter>;
+  color?: InputMaybe<StringFilter>;
+};
+
+export type BooleanFilter = {
+  eq?: InputMaybe<Scalars['Boolean']>;
+  exists?: InputMaybe<Scalars['Boolean']>;
+};
+
+export type PagesBlocksHeroActionsFilter = {
+  label?: InputMaybe<StringFilter>;
+  type?: InputMaybe<StringFilter>;
+  icon?: InputMaybe<BooleanFilter>;
+  link?: InputMaybe<StringFilter>;
+};
+
+export type PagesBlocksHeroImageFilter = {
+  src?: InputMaybe<ImageFilter>;
+  alt?: InputMaybe<StringFilter>;
+};
+
+export type PagesBlocksHeroFilter = {
+  tagline?: InputMaybe<StringFilter>;
+  headline?: InputMaybe<StringFilter>;
+  text?: InputMaybe<StringFilter>;
+  actions?: InputMaybe<PagesBlocksHeroActionsFilter>;
+  image?: InputMaybe<PagesBlocksHeroImageFilter>;
+  color?: InputMaybe<StringFilter>;
+};
+
+export type PagesBlocksFeaturesItemsIconFilter = {
+  color?: InputMaybe<StringFilter>;
+  style?: InputMaybe<StringFilter>;
+  name?: InputMaybe<StringFilter>;
+};
+
+export type PagesBlocksFeaturesItemsFilter = {
+  icon?: InputMaybe<PagesBlocksFeaturesItemsIconFilter>;
+  title?: InputMaybe<StringFilter>;
+  text?: InputMaybe<StringFilter>;
+};
+
+export type PagesBlocksFeaturesFilter = {
+  items?: InputMaybe<PagesBlocksFeaturesItemsFilter>;
+  color?: InputMaybe<StringFilter>;
+};
+
+export type PagesBlocksContentFilter = {
+  body?: InputMaybe<StringFilter>;
+  color?: InputMaybe<StringFilter>;
+};
+
+export type PagesBlocksTestimonialFilter = {
+  quote?: InputMaybe<StringFilter>;
+  author?: InputMaybe<StringFilter>;
+  color?: InputMaybe<StringFilter>;
+};
+
+export type PagesBlocksFilter = {
+  contact?: InputMaybe<PagesBlocksContactFilter>;
+  copyrightImage?: InputMaybe<PagesBlocksCopyrightImageFilter>;
+  hero?: InputMaybe<PagesBlocksHeroFilter>;
+  features?: InputMaybe<PagesBlocksFeaturesFilter>;
+  content?: InputMaybe<PagesBlocksContentFilter>;
+  testimonial?: InputMaybe<PagesBlocksTestimonialFilter>;
+};
+
+export type PagesFilter = {
+  blocks?: InputMaybe<PagesBlocksFilter>;
+};
+
+export type DocumentFilter = {
+  posts?: InputMaybe<PostsFilter>;
+  global?: InputMaybe<GlobalFilter>;
+  authors?: InputMaybe<AuthorsFilter>;
+  pages?: InputMaybe<PagesFilter>;
 };
 
 export type DocumentConnectionEdges = {
@@ -197,6 +390,7 @@ export type CollectionDocumentsArgs = {
   first?: InputMaybe<Scalars['Float']>;
   last?: InputMaybe<Scalars['Float']>;
   sort?: InputMaybe<Scalars['String']>;
+  filter?: InputMaybe<DocumentFilter>;
 };
 
 export type DocumentNode = PostsDocument | GlobalDocument | AuthorsDocument | PagesDocument;
