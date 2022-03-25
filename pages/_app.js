@@ -21,9 +21,36 @@ const App = ({ Component, pageProps }) => {
             isLocalClient={Boolean(Number(NEXT_PUBLIC_USE_LOCAL_CLIENT))}
             mediaStore={TinaCloudCloudinaryMediaStore}
             cmsCallback={(cms) => {
-              import("react-tinacms-editor").then(({ MarkdownFieldPlugin }) => {
-                cms.plugins.add(MarkdownFieldPlugin);
-              });
+                /**
+                 * Enables experimental branch switcher
+                 */
+                cms.flags.set("branch-switcher", true)
+
+                import("react-tinacms-editor").then(({ MarkdownFieldPlugin }) => {
+                  cms.plugins.add(MarkdownFieldPlugin);
+                });
+
+                /**
+                 * When `tina-admin` is enabled, this plugin configures contextual editing for collections
+                 */
+                import("tinacms").then(({ RouteMappingPlugin }) => {
+                  const RouteMapping = new RouteMappingPlugin((collection, document) => {
+                    if (["authors", "global"].includes(collection.name)) {
+                      return undefined;
+                    }
+                    if (["pages"].includes(collection.name)) {
+                      if (document.sys.filename === "home") {
+                        return `/`;
+                      }
+                      if (document.sys.filename === "about") {
+                        return `/about`;
+                      }
+                      return undefined;
+                    }
+                    return `/${collection.name}/${document.sys.filename}`;
+                  });
+                  cms.plugins.add(RouteMapping);
+                });
             }}
             documentCreatorCallback={{
               /**
