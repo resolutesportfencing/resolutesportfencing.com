@@ -15,7 +15,7 @@ blocks:
       - label: Read Blog
         type: link
         icon: false
-        link: /posts
+        link: /posts/pages/1
     image:
       src: >-
         http://res.cloudinary.com/dd8lpdgt2/image/upload/v1632002014/resolute_portrait_fovzct.png

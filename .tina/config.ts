@@ -15,6 +15,8 @@ export default defineConfig({
      */
     cms.flags.set("branch-switcher", true)
 
+    cms.flags.set('use-unstable-formify', true)
+
     import("react-tinacms-editor").then(({MarkdownFieldPlugin}) => {
       cms.plugins.add(MarkdownFieldPlugin);
     });

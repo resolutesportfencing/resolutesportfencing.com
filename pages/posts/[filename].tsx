@@ -1,7 +1,8 @@
 import { Post } from "../../components/post";
-import { ExperimentalGetTinaClient } from "../../.tina/__generated__/types";
+import {ExperimentalGetTinaClient, PostsConnection} from "../../.tina/__generated__/types";
 import FourOhFour from "../404";
 import { useTina } from "tinacms/dist/edit-state";
+import { staticRequest } from "tinacms";
 
 // Use the props returned by get static props
 export default function BlogPostPage(
@@ -21,7 +22,18 @@ export default function BlogPostPage(
   return <FourOhFour />;
 }
 
+const query = `query getPost($relativePath: String!) {
+  getPostDocument(relativePath: $relativePath) {
+    data {
+      title
+      body
+    }
+  }
+}
+`;
+
 export const getStaticProps = async ({ params }) => {
+  console.log(params)
   const client = ExperimentalGetTinaClient();
   const tinaProps = await client.BlogPostQuery({
     relativePath: `${params.filename}.md`,
