@@ -5,7 +5,7 @@ import { BsArrowRight } from "react-icons/bs";
 import { ThemeContext } from "./theme";
 import format from "date-fns/format";
 
-export const Posts = ({ data }) => {
+export const Posts = ({ data, nextPage, prevPage }: { data: any[], nextPage?: string, prevPage?: string}) => {
   const theme = React.useContext(ThemeContext);
   const titleColorClasses = {
     blue: "group-hover:text-blue-600 dark:group-hover:text-blue-300",
@@ -76,6 +76,9 @@ export const Posts = ({ data }) => {
           </Link>
         );
       })}
+      <div className="text-lg font-bold">
+        {prevPage && <Link href={`/posts/pages/${prevPage}`}><a>Previous Page</a></Link>} {nextPage && prevPage && <div> / </div>} {nextPage && <Link href={`/posts/pages/${nextPage}`}><a>Next Page</a></Link>}
+      </div>
     </>
   );
 };
