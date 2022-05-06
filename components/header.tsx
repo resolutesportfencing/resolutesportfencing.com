@@ -76,10 +76,10 @@ export const Header = ({ data }) => {
           <ul className="flex gap-1 sm:gap-8 lg:gap-10">
             {data.nav &&
               data.nav.map((item, i) => {
-                const route =
-                  router.asPath === "/" ? "home" : router.asPath || "home";
-                const href = item.href || "home";
-                const activeItem = route.includes(href);
+                let route =
+                  (router.asPath === "/" ? "home" : router.asPath || "home").split('/').filter(s => s)
+                const href = (item.href == '' && ['home']) || item.href.split('/');
+                const activeItem = route && route.length && href[0] == route[0];
                 return (
                   <li
                     key={`${item.label}-${i}`}

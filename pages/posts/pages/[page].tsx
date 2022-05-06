@@ -8,7 +8,7 @@ import {Db, readDb, writeDb} from '../../../lib/utils'
 export default function PostListing(
   props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
-  const posts = props.getPostsList.edges;
+  const posts = props.postsConnection.edges;
 
   return (
     <Section className="flex-1">
@@ -44,7 +44,7 @@ export const getStaticProps = async ({ params }) => {
               $last: Float, 
               $before: String, 
               $sort: String) {
-            getPostsList(
+            postsConnection(
               first: $first,
               after: $after,
               last: $last,
@@ -53,18 +53,14 @@ export const getStaticProps = async ({ params }) => {
                 edges {
                   node {
                   id
-                  values
-                  data {
-                    author {
-                      ... on AuthorsDocument {
-                        data {
-                          name
-                          avatar
-                        }
-                      }
+                  _values
+                  author {
+                    ... on Authors {
+                      name
+                      avatar
                     }
                   }
-                  sys {
+                  _sys {
                     filename
                   }
                   }
@@ -73,7 +69,7 @@ export const getStaticProps = async ({ params }) => {
           }
     `,
     variables,
-  })) as { getPostsList: PostsConnection };
+  })) as { postsConnection: PostsConnection };
 
   return {
     props: {
@@ -106,7 +102,7 @@ export const getStaticPaths = async () => {
               $last: Float, 
               $before: String, 
               $sort: String) {
-            getPostsList(
+            postsConnection(
               first: $first,
               after: $after,
               last: $last,
@@ -121,9 +117,9 @@ export const getStaticPaths = async () => {
           }
       `,
       variables,
-    }) as { getPostsList: PostsConnection }
+    }) as { postsConnection: PostsConnection }
 
-    const { pageInfo } = postsResponse.getPostsList
+    const { pageInfo } = postsResponse.postsConnection
 
     paths.push({
       params: {

@@ -1,5 +1,5 @@
-import { defineSchema } from "@tinacms/cli";
-import type { TinaCollection, TinaTemplate, TinaField } from "@tinacms/cli";
+import { defineSchema } from "tinacms";
+import type { TinaTemplate, TinaField } from "tinacms";
 
 const iconSchema: TinaField = {
   type: "object",

@@ -30,33 +30,77 @@ interface Node {
 
 """"""
 interface Document {
-  sys: SystemInfo
   id: ID!
-  form: JSON!
-  values: JSON!
+  _sys: SystemInfo
+  _values: JSON!
 }
 
 """A relay-compliant pagination connection"""
 interface Connection {
   totalCount: Float!
+  pageInfo: PageInfo!
 }
 
 type Query {
   getOptimizedQuery(queryString: String!): String
-  getCollection(collection: String): Collection!
-  getCollections: [Collection!]!
+  collection(collection: String): Collection!
+  collections: [Collection!]!
   node(id: String): Node!
-  getDocument(collection: String, relativePath: String): DocumentNode!
-  getDocumentList(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter): DocumentConnection!
-  getDocumentFields: JSON!
-  getPostsDocument(relativePath: String): PostsDocument!
-  getPostsList(before: String, after: String, first: Float, last: Float, sort: String, filter: PostsFilter): PostsConnection!
-  getGlobalDocument(relativePath: String): GlobalDocument!
-  getGlobalList(before: String, after: String, first: Float, last: Float, sort: String, filter: GlobalFilter): GlobalConnection!
-  getAuthorsDocument(relativePath: String): AuthorsDocument!
-  getAuthorsList(before: String, after: String, first: Float, last: Float, sort: String, filter: AuthorsFilter): AuthorsConnection!
-  getPagesDocument(relativePath: String): PagesDocument!
-  getPagesList(before: String, after: String, first: Float, last: Float, sort: String, filter: PagesFilter): PagesConnection!
+  document(collection: String, relativePath: String): DocumentNode!
+  posts(relativePath: String): Posts!
+  postsConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PostsFilter): PostsConnection!
+  global(relativePath: String): Global!
+  globalConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: GlobalFilter): GlobalConnection!
+  authors(relativePath: String): Authors!
+  authorsConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: AuthorsFilter): AuthorsConnection!
+  pages(relativePath: String): Pages!
+  pagesConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PagesFilter): PagesConnection!
+}
+
+input DocumentFilter {
+  posts: PostsFilter
+  global: GlobalFilter
+  authors: AuthorsFilter
+  pages: PagesFilter
+}
+
+type DocumentConnectionEdges {
+  cursor: String!
+  node: DocumentNode
+}
+
+type DocumentConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [DocumentConnectionEdges]
+}
+
+type Collection {
+  name: String!
+  slug: String!
+  label: String
+  path: String!
+  format: String
+  matches: String
+  templates: [JSON]
+  fields: [JSON]
+  documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter): DocumentConnection!
+}
+
+union DocumentNode = Posts | Global | Authors | Pages
+
+union PostsAuthor = Authors
+
+type Posts implements Node & Document {
+  title: String
+  author: PostsAuthor
+  date: String
+  heroImg: String
+  excerpt: String
+  body: String
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
 }
 
 input StringFilter {
@@ -64,11 +108,6 @@ input StringFilter {
   eq: String
   exists: Boolean
   in: [String]
-}
-
-input AuthorsFilter {
-  name: StringFilter
-  avatar: StringFilter
 }
 
 input PostsAuthorFilter {
@@ -97,6 +136,72 @@ input PostsFilter {
   heroImg: ImageFilter
   excerpt: StringFilter
   body: StringFilter
+}
+
+type PostsConnectionEdges {
+  cursor: String!
+  node: Posts
+}
+
+type PostsConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [PostsConnectionEdges]
+}
+
+type GlobalHeaderIcon {
+  color: String
+  style: String
+  name: String
+}
+
+type GlobalHeaderNav {
+  href: String
+  label: String
+}
+
+type GlobalHeader {
+  icon: GlobalHeaderIcon
+  color: String
+  nav: [GlobalHeaderNav]
+}
+
+type GlobalContactAddress {
+  street: String
+}
+
+type GlobalContact {
+  color: String
+  address: GlobalContactAddress
+}
+
+type GlobalFooterSocial {
+  facebook: String
+  twitter: String
+  instagram: String
+  github: String
+}
+
+type GlobalFooter {
+  color: String
+  social: GlobalFooterSocial
+}
+
+type GlobalTheme {
+  color: String
+  font: String
+  icon: String
+  darkMode: String
+}
+
+type Global implements Node & Document {
+  header: GlobalHeader
+  contact: GlobalContact
+  footer: GlobalFooter
+  theme: GlobalTheme
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
 }
 
 input GlobalHeaderIconFilter {
@@ -149,6 +254,121 @@ input GlobalFilter {
   contact: GlobalContactFilter
   footer: GlobalFooterFilter
   theme: GlobalThemeFilter
+}
+
+type GlobalConnectionEdges {
+  cursor: String!
+  node: Global
+}
+
+type GlobalConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [GlobalConnectionEdges]
+}
+
+type Authors implements Node & Document {
+  name: String
+  avatar: String
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input AuthorsFilter {
+  name: StringFilter
+  avatar: StringFilter
+}
+
+type AuthorsConnectionEdges {
+  cursor: String!
+  node: Authors
+}
+
+type AuthorsConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [AuthorsConnectionEdges]
+}
+
+type PagesBlocksContact {
+  street: String
+  city: String
+  state: String
+  zip: String
+  email: String
+  phone: String
+  note: String
+  color: String
+}
+
+type PagesBlocksCopyrightImageImage {
+  src: String
+  alt: String
+}
+
+type PagesBlocksCopyrightImage {
+  attribution: String
+  image: PagesBlocksCopyrightImageImage
+  color: String
+}
+
+type PagesBlocksHeroActions {
+  label: String
+  type: String
+  icon: Boolean
+  link: String
+}
+
+type PagesBlocksHeroImage {
+  src: String
+  alt: String
+}
+
+type PagesBlocksHero {
+  tagline: String
+  headline: String
+  text: String
+  actions: [PagesBlocksHeroActions]
+  image: PagesBlocksHeroImage
+  color: String
+}
+
+type PagesBlocksFeaturesItemsIcon {
+  color: String
+  style: String
+  name: String
+}
+
+type PagesBlocksFeaturesItems {
+  icon: PagesBlocksFeaturesItemsIcon
+  title: String
+  text: String
+}
+
+type PagesBlocksFeatures {
+  items: [PagesBlocksFeaturesItems]
+  color: String
+}
+
+type PagesBlocksContent {
+  body: String
+  color: String
+}
+
+type PagesBlocksTestimonial {
+  quote: String
+  author: String
+  color: String
+}
+
+union PagesBlocks = PagesBlocksContact | PagesBlocksCopyrightImage | PagesBlocksHero | PagesBlocksFeatures | PagesBlocksContent | PagesBlocksTestimonial
+
+type Pages implements Node & Document {
+  blocks: [PagesBlocks]
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
 }
 
 input PagesBlocksContactFilter {
@@ -240,259 +460,13 @@ input PagesFilter {
   blocks: PagesBlocksFilter
 }
 
-input DocumentFilter {
-  posts: PostsFilter
-  global: GlobalFilter
-  authors: AuthorsFilter
-  pages: PagesFilter
-}
-
-type DocumentConnectionEdges {
-  cursor: String
-  node: DocumentNode
-}
-
-type DocumentConnection implements Connection {
-  pageInfo: PageInfo
-  totalCount: Float!
-  edges: [DocumentConnectionEdges]
-}
-
-type Collection {
-  name: String!
-  slug: String!
-  label: String
-  path: String!
-  format: String
-  matches: String
-  templates: [JSON]
-  fields: [JSON]
-  documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter): DocumentConnection!
-}
-
-union DocumentNode = PostsDocument | GlobalDocument | AuthorsDocument | PagesDocument
-
-union PostsAuthorDocument = AuthorsDocument
-
-type Posts {
-  title: String
-  author: PostsAuthorDocument
-  date: String
-  heroImg: String
-  excerpt: String
-  body: String
-}
-
-type PostsDocument implements Node & Document {
-  id: ID!
-  sys: SystemInfo!
-  data: Posts!
-  form: JSON!
-  values: JSON!
-  dataJSON: JSON!
-}
-
-type PostsConnectionEdges {
-  cursor: String
-  node: PostsDocument
-}
-
-type PostsConnection implements Connection {
-  pageInfo: PageInfo
-  totalCount: Float!
-  edges: [PostsConnectionEdges]
-}
-
-type GlobalHeaderIcon {
-  color: String
-  style: String
-  name: String
-}
-
-type GlobalHeaderNav {
-  href: String
-  label: String
-}
-
-type GlobalHeader {
-  icon: GlobalHeaderIcon
-  color: String
-  nav: [GlobalHeaderNav]
-}
-
-type GlobalContactAddress {
-  street: String
-}
-
-type GlobalContact {
-  color: String
-  address: GlobalContactAddress
-}
-
-type GlobalFooterSocial {
-  facebook: String
-  twitter: String
-  instagram: String
-  github: String
-}
-
-type GlobalFooter {
-  color: String
-  social: GlobalFooterSocial
-}
-
-type GlobalTheme {
-  color: String
-  font: String
-  icon: String
-  darkMode: String
-}
-
-type Global {
-  header: GlobalHeader
-  contact: GlobalContact
-  footer: GlobalFooter
-  theme: GlobalTheme
-}
-
-type GlobalDocument implements Node & Document {
-  id: ID!
-  sys: SystemInfo!
-  data: Global!
-  form: JSON!
-  values: JSON!
-  dataJSON: JSON!
-}
-
-type GlobalConnectionEdges {
-  cursor: String
-  node: GlobalDocument
-}
-
-type GlobalConnection implements Connection {
-  pageInfo: PageInfo
-  totalCount: Float!
-  edges: [GlobalConnectionEdges]
-}
-
-type Authors {
-  name: String
-  avatar: String
-}
-
-type AuthorsDocument implements Node & Document {
-  id: ID!
-  sys: SystemInfo!
-  data: Authors!
-  form: JSON!
-  values: JSON!
-  dataJSON: JSON!
-}
-
-type AuthorsConnectionEdges {
-  cursor: String
-  node: AuthorsDocument
-}
-
-type AuthorsConnection implements Connection {
-  pageInfo: PageInfo
-  totalCount: Float!
-  edges: [AuthorsConnectionEdges]
-}
-
-type PagesBlocksContact {
-  street: String
-  city: String
-  state: String
-  zip: String
-  email: String
-  phone: String
-  note: String
-  color: String
-}
-
-type PagesBlocksCopyrightImageImage {
-  src: String
-  alt: String
-}
-
-type PagesBlocksCopyrightImage {
-  attribution: String
-  image: PagesBlocksCopyrightImageImage
-  color: String
-}
-
-type PagesBlocksHeroActions {
-  label: String
-  type: String
-  icon: Boolean
-  link: String
-}
-
-type PagesBlocksHeroImage {
-  src: String
-  alt: String
-}
-
-type PagesBlocksHero {
-  tagline: String
-  headline: String
-  text: String
-  actions: [PagesBlocksHeroActions]
-  image: PagesBlocksHeroImage
-  color: String
-}
-
-type PagesBlocksFeaturesItemsIcon {
-  color: String
-  style: String
-  name: String
-}
-
-type PagesBlocksFeaturesItems {
-  icon: PagesBlocksFeaturesItemsIcon
-  title: String
-  text: String
-}
-
-type PagesBlocksFeatures {
-  items: [PagesBlocksFeaturesItems]
-  color: String
-}
-
-type PagesBlocksContent {
-  body: String
-  color: String
-}
-
-type PagesBlocksTestimonial {
-  quote: String
-  author: String
-  color: String
-}
-
-union PagesBlocks = PagesBlocksContact | PagesBlocksCopyrightImage | PagesBlocksHero | PagesBlocksFeatures | PagesBlocksContent | PagesBlocksTestimonial
-
-type Pages {
-  blocks: [PagesBlocks]
-}
-
-type PagesDocument implements Node & Document {
-  id: ID!
-  sys: SystemInfo!
-  data: Pages!
-  form: JSON!
-  values: JSON!
-  dataJSON: JSON!
-}
-
 type PagesConnectionEdges {
-  cursor: String
-  node: PagesDocument
+  cursor: String!
+  node: Pages
 }
 
 type PagesConnection implements Connection {
-  pageInfo: PageInfo
+  pageInfo: PageInfo!
   totalCount: Float!
   edges: [PagesConnectionEdges]
 }
@@ -500,15 +474,16 @@ type PagesConnection implements Connection {
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
+  deleteDocument(collection: String, relativePath: String!): DocumentNode!
   createDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
-  updatePostsDocument(relativePath: String!, params: PostsMutation!): PostsDocument!
-  createPostsDocument(relativePath: String!, params: PostsMutation!): PostsDocument!
-  updateGlobalDocument(relativePath: String!, params: GlobalMutation!): GlobalDocument!
-  createGlobalDocument(relativePath: String!, params: GlobalMutation!): GlobalDocument!
-  updateAuthorsDocument(relativePath: String!, params: AuthorsMutation!): AuthorsDocument!
-  createAuthorsDocument(relativePath: String!, params: AuthorsMutation!): AuthorsDocument!
-  updatePagesDocument(relativePath: String!, params: PagesMutation!): PagesDocument!
-  createPagesDocument(relativePath: String!, params: PagesMutation!): PagesDocument!
+  updatePosts(relativePath: String!, params: PostsMutation!): Posts!
+  createPosts(relativePath: String!, params: PostsMutation!): Posts!
+  updateGlobal(relativePath: String!, params: GlobalMutation!): Global!
+  createGlobal(relativePath: String!, params: GlobalMutation!): Global!
+  updateAuthors(relativePath: String!, params: AuthorsMutation!): Authors!
+  createAuthors(relativePath: String!, params: AuthorsMutation!): Authors!
+  updatePages(relativePath: String!, params: PagesMutation!): Pages!
+  createPages(relativePath: String!, params: PagesMutation!): Pages!
 }
 
 input DocumentMutation {

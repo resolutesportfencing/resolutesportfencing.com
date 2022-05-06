@@ -1,4 +1,4 @@
-import { Blocks } from "../components/blocks";
+import { BlockRenderer } from "../components/block-renderer";
 import { ExperimentalGetTinaClient } from "../.tina/__generated__/types";
 import { useTina } from "tinacms/dist/edit-state";
 
@@ -10,7 +10,8 @@ export default function HomePage(
     variables: props.variables,
     data: props.data,
   });
-  return <Blocks {...data.getPagesDocument.data} />;
+
+  return <BlockRenderer {...data.pages} />
 }
 
 export const getStaticProps = async ({ params }) => {
@@ -29,10 +30,10 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const client = ExperimentalGetTinaClient();
-  const pagesListData = await client.getPagesList();
+  const pagesListData = await client.pagesConnection();
   return {
-    paths: pagesListData.data.getPagesList.edges.map((page) => ({
-      params: { filename: page.node.sys.filename },
+    paths: pagesListData.data.pagesConnection.edges.map((page) => ({
+      params: { filename: page.node._sys.filename },
     })),
     fallback: false,
   };
