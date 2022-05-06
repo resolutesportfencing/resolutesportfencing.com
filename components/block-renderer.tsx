@@ -7,7 +7,7 @@ import { Testimonial } from "./blocks/testimonial";
 import { Contact } from "./blocks/contact";
 import { CopyrightImage } from "./blocks/copyright-image"
 
-export const Blocks = (props: Pages) => {
+export const BlockRenderer = (props: Omit<Pages, "id" | "_sys" | "_values">) => {
   return (
     <>
       {props.blocks
@@ -23,12 +23,6 @@ export const Blocks = (props: Pages) => {
                 return (
                   <React.Fragment key={i + block.__typename}>
                     <Hero data={block} />
-                  </React.Fragment>
-                );
-              case "PagesBlocksContact":
-                return (
-                  <React.Fragment key={i + block.__typename}>
-                    <Contact data={block} />
                   </React.Fragment>
                 );
               case "PagesBlocksCopyrightImage":

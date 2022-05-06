@@ -26,15 +26,15 @@ export const Posts = ({ data, nextPage, prevPage }: { data: any[], nextPage?: st
          * Formats date field value to be more readable.
          */
         let formattedDate
-        if (post?.values.date !== null) {
-          const date = post.values.date ? new Date(post?.values?.date) : '';
+        if (post?._values.date !== null) {
+          const date = post._values.date ? new Date(post?._values?.date) : '';
           formattedDate = date ? format(date, "MMM dd, yyyy") : date;
         }
 
         return (
           <Link
-            key={post.sys.filename}
-            href={`/posts/` + post.sys.filename}
+            key={post._sys.filename}
+            href={`/posts/` + post._sys.filename}
             passHref
           >
             <a
@@ -46,24 +46,24 @@ export const Posts = ({ data, nextPage, prevPage }: { data: any[], nextPage?: st
                   titleColorClasses[theme.color]
                 }`}
               >
-                {post.values.title}{" "}
+                {post._values.title}{" "}
                 <span className="inline-block opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out">
                   <BsArrowRight className="inline-block h-8 -mt-1 ml-1 w-auto opacity-70" />
                 </span>
               </h3>
               <div className="prose dark:prose-dark prose-lg w-full max-w-none mb-5">
-                <Markdown>{post.values.excerpt}</Markdown>
+                <Markdown>{post._values.excerpt}</Markdown>
               </div>
               <div className="flex items-center -mb-2">
                 <div className="flex-shrink-0 mr-2">
                   <img
                     className="h-10 w-10 object-cover rounded-full shadow-sm"
-                    src={post.data.author?.data?.avatar}
-                    alt={post.data.author?.data?.name}
+                    src={post.author?.avatar}
+                    alt={post.author?.name}
                   />
                 </div>
                 <p className="text-sm font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white">
-                  {post.data.author?.data.name}
+                  {post.author?.name}
                 </p>
                 <span className="font-bold text-gray-200 dark:text-gray-500 mx-2">
                   —
