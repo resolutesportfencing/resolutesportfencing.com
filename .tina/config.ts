@@ -1,4 +1,5 @@
-import {defineConfig} from 'tinacms'
+import { defineConfig } from 'tinacms'
+import schema from './schema'
 
 const NEXT_PUBLIC_TINA_CLIENT_ID = process.env.NEXT_PUBLIC_TINA_CLIENT_ID;
 const NEXT_PUBLIC_USE_LOCAL_CLIENT =
@@ -6,6 +7,7 @@ const NEXT_PUBLIC_USE_LOCAL_CLIENT =
 
 export default defineConfig({
   branch: "main",
+  schema,
   clientId: NEXT_PUBLIC_TINA_CLIENT_ID,
   isLocalClient: Boolean(Number(NEXT_PUBLIC_USE_LOCAL_CLIENT)),
   mediaStore: async () => (await import('next-tinacms-cloudinary')).TinaCloudCloudinaryMediaStore,
@@ -30,15 +32,15 @@ export default defineConfig({
           return undefined;
         }
         if (["pages"].includes(collection.name)) {
-          if (document.sys.filename === "home") {
+          if (document._sys.filename === "home") {
             return `/`;
           }
-          if (document.sys.filename === "about") {
+          if (document._sys.filename === "about") {
             return `/about`;
           }
           return undefined;
         }
-        return `/${collection.name}/${document.sys.filename}`;
+        return `/${collection.name}/${document._sys.filename}`;
       });
       cms.plugins.add(RouteMapping);
     });
@@ -72,47 +74,4 @@ export default defineConfig({
 
     return createForm(formConfig);
   }
-
-  // apiURL,
-  // mediaStore: async () => {
-  //   const pack = await import("next-tinacms-cloudinary");
-  //   return pack.TinaCloudCloudinaryMediaStore;
-  // },
-  // cmsCallback: (cms) => {
-  //   /**
-  //    * Enables experimental branch switcher
-  //    */
-  //   cms.flags.set("branch-switcher", true);
-  //
-  //   /**
-  //    * When `tina-admin` is enabled, this plugin configures contextual editing for collections
-  //    */
-  //   import("tinacms").then(({ RouteMappingPlugin }) => {
-  //     const RouteMapping = new RouteMappingPlugin((collection, document) => {
-  //       if (["authors", "global"].includes(collection.name)) {
-  //         return undefined;
-  //       }
-  //       if (["pages"].includes(collection.name)) {
-  //         if (document.sys.filename === "home") {
-  //           return `/`;
-  //         }
-  //         if (document.sys.filename === "about") {
-  //           return `/about`;
-  //         }
-  //         return undefined;
-  //       }
-  //       return `/${collection.name}/${document.sys.filename}`;
-  //     });
-  //     cms.plugins.add(RouteMapping);
-  //   });
-  //
-  //   return cms;
-  // },
-  // formifyCallback: ({ formConfig, createForm, createGlobalForm }) => {
-  //   if (formConfig.id === "getGlobalDocument") {
-  //     return createGlobalForm(formConfig);
-  //   }
-  //
-  //   return createForm(formConfig);
-  // },
 });

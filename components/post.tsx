@@ -5,7 +5,7 @@ import { Section } from "./section";
 import { ThemeContext } from "./theme";
 import format from 'date-fns/format'
 
-export const Post = ({ data }) => {
+export const Post = (props) => {
   const theme = React.useContext(ThemeContext);
   const titleColorClasses = {
     blue: "from-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500",
@@ -24,8 +24,8 @@ export const Post = ({ data }) => {
    * Formats date field value to be more readable.
    */
   let formattedDate
-  if (data?.date !== null) {
-    const date = data.date ? new Date(data.date) : '';
+  if (props?.date !== null) {
+    const date = props.date ? new Date(props.date) : '';
     formattedDate = date ? format(date, "MMM dd, yyyy") : date;
   }
 
@@ -40,22 +40,22 @@ export const Post = ({ data }) => {
               titleColorClasses[theme.color]
             }`}
           >
-            {data.title}
+            {props.title}
           </span>
         </h2>
 
         <div className="flex items-center justify-center mb-16">
-          {data.author && (
+          {props.author && (
             <>
               <div className="flex-shrink-0 mr-4">
                 <img
                   className="h-14 w-14 object-cover rounded-full shadow-sm"
-                  src={data.author.data.avatar}
-                  alt={data.author.data.name}
+                  src={props.author.avatar}
+                  alt={props.author.name}
                 />
               </div>
               <p className="text-base font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-white">
-                {data.author.data.name}
+                {props.author.name}
               </p>
               <span className="font-bold text-gray-200 dark:text-gray-500 mx-2">
                 —
@@ -67,10 +67,10 @@ export const Post = ({ data }) => {
           </p>
         </div>
       </Container>
-      {data.heroImg && (
+      {props.heroImg && (
         <div className="px-6 max-w-4xl lg:max-w-6xl flex justify-center mx-auto">
           <img
-            src={data.heroImg}
+            src={props.heroImg}
             className="mb-14 block h-auto max-w-full mx-auto object-cover rounded-md"
             style={{ maxHeight: "80vh" }}
           />
@@ -78,7 +78,7 @@ export const Post = ({ data }) => {
       )}
       <Container className={`flex-1 max-w-4xl pt-4`} size="large">
         <div className="prose dark:prose-dark  w-full max-w-none">
-          <Markdown>{data.body}</Markdown>
+          <Markdown>{props.body}</Markdown>
         </div>
       </Container>
     </Section>

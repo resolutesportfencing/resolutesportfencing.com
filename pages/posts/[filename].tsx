@@ -1,8 +1,7 @@
 import { Post } from "../../components/post";
-import {ExperimentalGetTinaClient, PostsConnection} from "../../.tina/__generated__/types";
+import {ExperimentalGetTinaClient} from "../../.tina/__generated__/types";
 import FourOhFour from "../404";
 import { useTina } from "tinacms/dist/edit-state";
-import { staticRequest } from "tinacms";
 
 // Use the props returned by get static props
 export default function BlogPostPage(
@@ -13,8 +12,8 @@ export default function BlogPostPage(
     variables: props.variables,
     data: props.data,
   });
-  if (data && data.getPostsDocument) {
-    return <Post {...data.getPostsDocument} />;
+  if (data && data.posts) {
+    return <Post {...data.posts} />;
   }
   // We're likely loading a new document that doesn't yet have data
   // show the 404 which will quickly be replace by client side content
@@ -22,22 +21,12 @@ export default function BlogPostPage(
   return <FourOhFour />;
 }
 
-const query = `query getPost($relativePath: String!) {
-  getPostDocument(relativePath: $relativePath) {
-    data {
-      title
-      body
-    }
-  }
-}
-`;
-
 export const getStaticProps = async ({ params }) => {
-  console.log(params)
   const client = ExperimentalGetTinaClient();
   const tinaProps = await client.BlogPostQuery({
     relativePath: `${params.filename}.md`,
   });
+
   return {
     props: {
       ...tinaProps,
@@ -61,10 +50,10 @@ export const getStaticProps = async ({ params }) => {
  */
 export const getStaticPaths = async () => {
   const client = ExperimentalGetTinaClient();
-  const postsListData = await client.getPostsList();
+  const postsListData = await client.postsConnection();
   return {
-    paths: postsListData.data.getPostsList.edges.map((post) => ({
-      params: { filename: post.node.sys.filename },
+    paths: postsListData.data.postsConnection.edges.map((post) => ({
+      params: { filename: post.node._sys.filename },
     })),
     fallback: false,
   };
