@@ -1613,7 +1613,7 @@
   resolved "https://registry.yarnpkg.com/@tinacms/auth/-/auth-0.50.1.tgz#47ee8fd6fb235de07d30802076391a9221f9270e"
   integrity sha512-lXlH2Y+ffRAHejvw2TGUU+LO+R5MBYcaxb7uE9dr5jgVURCqRRVLiuwSz4o8WgfwUb5cni+wFHCZVHjqT3e0kQ==
 
-"@tinacms/cli@^0.60.28":
+"@tinacms/cli@0.60.28":
   version "0.60.28"
   resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.60.28.tgz#d64e243112fe448ed87445b0692d793005858988"
   integrity sha512-6D2j8QYIeqHQoFRhZNlLZWrALDCPnmJL9gb36ffCSef8aVxmT3vKD5Vi1y2b/5hjeNS3DxO70UYKVdo9VQ/ryw==

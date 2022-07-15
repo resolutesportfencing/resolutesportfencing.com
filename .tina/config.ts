@@ -1,15 +1,19 @@
 import { defineConfig } from 'tinacms'
 import schema from './schema'
 
-const NEXT_PUBLIC_TINA_CLIENT_ID = process.env.NEXT_PUBLIC_TINA_CLIENT_ID;
-const NEXT_PUBLIC_USE_LOCAL_CLIENT =
-  process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT || 0;
+const branch = "main";
+const apiURL =
+  process.env.NODE_ENV == "development"
+    ? "http://localhost:4001/graphql"
+    : `https://content.tinajs.io/content/${process.env.NEXT_PUBLIC_TINA_CLIENT_ID}/github/${branch}`;
+
 
 export default defineConfig({
   branch: "main",
   schema,
-  clientId: NEXT_PUBLIC_TINA_CLIENT_ID,
-  isLocalClient: Boolean(Number(NEXT_PUBLIC_USE_LOCAL_CLIENT)),
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+  isLocalClient: Boolean(Number(process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT)),
+  apiURL,
   mediaStore: async () => (await import('next-tinacms-cloudinary')).TinaCloudCloudinaryMediaStore,
   cmsCallback: (cms) => {
     /**
