@@ -1,27 +1,30 @@
 import { defineConfig } from 'tinacms'
 import schema from './schema'
 
-const NEXT_PUBLIC_TINA_CLIENT_ID = process.env.NEXT_PUBLIC_TINA_CLIENT_ID;
-const NEXT_PUBLIC_USE_LOCAL_CLIENT =
-  process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT || 0;
+const branch = "main";
+const apiURL =
+  process.env.NODE_ENV == "development"
+    ? "http://localhost:4001/graphql"
+    : `https://content.tinajs.io/content/${process.env.NEXT_PUBLIC_TINA_CLIENT_ID}/github/${branch}`;
+
 
 export default defineConfig({
   branch: "main",
   schema,
-  clientId: NEXT_PUBLIC_TINA_CLIENT_ID,
-  isLocalClient: Boolean(Number(NEXT_PUBLIC_USE_LOCAL_CLIENT)),
-  mediaStore: async () => (await import('next-tinacms-cloudinary')).TinaCloudCloudinaryMediaStore,
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+  isLocalClient: Boolean(Number(process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT)),
+  apiURL,
   cmsCallback: (cms) => {
     /**
      * Enables experimental branch switcher
      */
     cms.flags.set("branch-switcher", true)
 
-    cms.flags.set('use-unstable-formify', true)
+    // cms.flags.set('use-unstable-formify', true)
 
-    import("react-tinacms-editor").then(({MarkdownFieldPlugin}) => {
-      cms.plugins.add(MarkdownFieldPlugin);
-    });
+    // import("react-tinacms-editor").then(({MarkdownFieldPlugin}) => {
+    //   cms.plugins.add(MarkdownFieldPlugin);
+    // });
 
     /**
      * When `tina-admin` is enabled, this plugin configures contextual editing for collections
@@ -68,7 +71,7 @@ export default defineConfig({
    * Treat the Global collection as a global form
    */
   formifyCallback: ({formConfig, createForm, createGlobalForm}) => {
-    if (formConfig.id === "getGlobalDocument") {
+    if (formConfig.id === "content/global/index.json") {
       return createGlobalForm(formConfig);
     }
 

@@ -382,12 +382,9 @@ const copyrightImageSchema: TinaTemplate = {
   label: "Image w/ Copyright",
   fields: [
     {
-      type: "string",
+      type: "rich-text",
       label: "Attribution",
       name: "attribution",
-      ui: {
-        component: "markdown",
-      },
     },
     {
       type: "object",
@@ -472,11 +469,20 @@ const contactBlockSchema: TinaTemplate = {
 };
 
 export default defineSchema({
+  config: {
+    media: {
+      tina: {
+        publicFolder: "public",
+        mediaRoot: "uploads"
+      }
+    },
+  },
   collections: [
     {
       label: "Blog Posts",
       name: "posts",
       path: "content/posts",
+      format: "md",
       fields: [
         {
           type: "string",
@@ -526,6 +532,7 @@ export default defineSchema({
       label: "Global",
       name: "global",
       path: "content/global",
+      format: "json",
       fields: [
         {
           type: "object",
@@ -744,6 +751,7 @@ export default defineSchema({
       label: "Authors",
       name: "authors",
       path: "content/authors",
+      format: "md",
       fields: [
         {
           type: "string",
@@ -761,6 +769,7 @@ export default defineSchema({
       label: "Pages",
       name: "pages",
       path: "content/pages",
+      format: "md",
       fields: [
         {
           type: "object",
