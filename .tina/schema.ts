@@ -382,12 +382,9 @@ const copyrightImageSchema: TinaTemplate = {
   label: "Image w/ Copyright",
   fields: [
     {
-      type: "string",
+      type: "rich-text",
       label: "Attribution",
       name: "attribution",
-      ui: {
-        component: "markdown",
-      },
     },
     {
       type: "object",
@@ -472,6 +469,14 @@ const contactBlockSchema: TinaTemplate = {
 };
 
 export default defineSchema({
+  config: {
+    media: {
+      tina: {
+        publicFolder: "public",
+        mediaRoot: "uploads"
+      }
+    },
+  },
   collections: [
     {
       label: "Blog Posts",

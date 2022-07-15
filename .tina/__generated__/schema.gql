@@ -309,7 +309,7 @@ type PagesBlocksCopyrightImageImage {
 }
 
 type PagesBlocksCopyrightImage {
-  attribution: String
+  attribution: JSON
   image: PagesBlocksCopyrightImageImage
   color: String
 }
@@ -383,13 +383,19 @@ input PagesBlocksContactFilter {
   color: StringFilter
 }
 
+input RichTextFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+}
+
 input PagesBlocksCopyrightImageImageFilter {
   src: ImageFilter
   alt: StringFilter
 }
 
 input PagesBlocksCopyrightImageFilter {
-  attribution: StringFilter
+  attribution: RichTextFilter
   image: PagesBlocksCopyrightImageImageFilter
   color: StringFilter
 }
@@ -577,7 +583,7 @@ input PagesBlocksCopyrightImageImageMutation {
 }
 
 input PagesBlocksCopyrightImageMutation {
-  attribution: String
+  attribution: JSON
   image: PagesBlocksCopyrightImageImageMutation
   color: String
 }
